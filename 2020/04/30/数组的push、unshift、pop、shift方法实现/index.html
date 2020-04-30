@@ -578,7 +578,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/10.png"/>
+            <img src="/images/random/11.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -587,6 +587,9 @@
 
 <h2 id="头部添加-unshift"><a href="#头部添加-unshift" class="headerlink" title="头部添加(unshift)"></a>头部添加(unshift)</h2><p><code>unshift()函数将将一个或者多个元素添加到数组的开头，并返回该数组的新长度（该函数修改原有数组）</code><br>向数组的头部添加元素，数组的长度也会发生变化，但不像尾部添加的操作，数组原有元素索引不改变。做头部添加的操作，需要将原有元素的索引向左移动。<br>例如只添加一位，则需要将数组的每个元素的索引依次向右移一位，假设原来数组长度是 4，头部添加一个元素，长度变为 5。所以现在就变成：<strong>array.length = 5</strong>,而目前<strong>array[5-1]</strong>是最后一个元素，现在由于依次往后移动，所以，<strong>array[5-1]必须是最后一个元素</strong><br><strong>所以我们可以从数组的最后一位的下一位往前循环，将 array[i]赋值为 array[i-1]</strong>循环到 1 停，将 array 的第 0 项赋值为需要添加的值。<br>过程如下<br><img src="/images/array/unshift.png" alt=""><br>具体代码实现：</p>
 <figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype._unshift = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123; <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="keyword">this</span>.length; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line"> <span class="keyword">this</span>[i] = <span class="keyword">this</span>[i - <span class="number">1</span>] &#125; <span class="keyword">this</span>[<span class="number">0</span>] = value <span class="keyword">return</span> <span class="keyword">this</span>.length</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">arr._unshift(<span class="number">8</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ 8, 1, 2, 3, 4 ]</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但上面的代码只实现了一个元素的头部添加，unshift 方法支持添加多个元素。例如：</p>
+<figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]arr.unshift(<span class="number">8</span>, <span class="number">7</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ 8, 7, 1, 2, 3, 4 ]</span></span><br></pre></td></tr></table></div></figure>
 
 <h2 id="尾部删除-pop"><a href="#尾部删除-pop" class="headerlink" title="尾部删除 (pop)"></a>尾部删除 (pop)</h2><p><code>pop()函数将删除arrayObject的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不改变数组，并返回undefined值</code></p>
 <h2 id="头部删除（shift）"><a href="#头部删除（shift）" class="headerlink" title="头部删除（shift）"></a>头部删除（shift）</h2><p><code>shift()函数用于把数组的第一个元素从其中删除，并返回第一个元素的值</code></p>
@@ -803,7 +806,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1588228170900
+    var postLastModifiedDate = 1588228545185
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {

@@ -42,6 +42,13 @@ arr._unshift(8);
 console.log(arr); // [ 8, 1, 2, 3, 4 ]
 ```
 
+但上面的代码只实现了一个元素的头部添加，unshift 方法支持添加多个元素。例如：
+
+```javascript
+var arr = [1, 2, 3, 4]arr.unshift(8, 7)
+console.log(arr); // [ 8, 7, 1, 2, 3, 4 ]
+```
+
 ## 尾部删除 (pop)
 
 `pop()函数将删除arrayObject的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不改变数组，并返回undefined值`
