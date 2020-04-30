@@ -49,10 +49,74 @@ var arr = [1, 2, 3, 4]arr.unshift(8, 7)
 console.log(arr); // [ 8, 7, 1, 2, 3, 4 ]
 ```
 
+针对这样的情况，需要知道传入了几个参数，可以从 arguments 对象入手，思路还是上面的思路：
+`先以最后生成的数组长度为基准从后往前循环，依次移动元素，然后将新元素依次放到数组的头部`
+新数组的长度等于原数组的长度 + 参数的个数，从后往前循环，将原数组的最后一位，移动到新数组的最后一位，
+因为需要在头部插入数量为入参个数的元素，所以循环的起点为原数组的长度 + 参数的个数，循环的终点为入参的个数。
+但由于索引总是比长度少一位，所以起点和终点都需要减 1。
+现在可以先把循环移动的逻辑写出来
+
+```javascript
+Array.prototype._unshift = function (...value) {
+  for (
+    var i = this.length + arguments.length - 1;
+    i > arguments.length - 1;
+    i--
+  ) {
+    this[i] = this[i - arguments.length];
+  }
+};
+```
+
+再思考一下，由于上一步已经移动完了，数组头部的位置已经空出来了，第二步是有几个参数就要插入几个元素。所以现在只需要循环插入就好：
+
+```javascript
+for (var k = 0; k < arguments.length; k++) {
+  this[k] = arguments[k];
+}
+```
+
 ## 尾部删除 (pop)
 
 `pop()函数将删除arrayObject的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不改变数组，并返回undefined值`
+这个很好实现，按照定义一步一步做就可以。首先，记录下最后一个元素，便于返回，之后从数组中删除最后一个元素，
+将其指向 null 释放掉，然后将数组的长度减 1，最后判断一下是否为空数组。
+
+```javascript
+Array.prototype._pop = function () { if (!this.length) {
+ return undefined
+ }
+ var end = this[this.length - 1] this[this.length - 1] = null;
+ this.length = this.length - 1;
+ return end
+ }
+
+var arr = [1, 2, 3, 4];
+arr._pop();
+console.log(arr); // [ 1, 2, 3 ]
+```
 
 ## 头部删除（shift）
 
 `shift()函数用于把数组的第一个元素从其中删除，并返回第一个元素的值`
+头部删除，会改变原有数组元素的索引，也就是将未被删除的元素索引都往左移一位，首先要将被删除的元素记录下来便于返回，之后将数组第一个元素指向 null，
+最后循环数组，移动索引。
+
+```javascript
+Array.prototype._shift = function () {
+  if (!this.length) {
+    return undefined;
+  }
+  var start = this[0];
+  this[0] = null;
+  for (var i = 0; i < this.length - 1; i++) {
+    this[i] = this[i + 1];
+  }
+  this.length = this.length - 1;
+  return start;
+};
+
+var arr = [1, 2, 3, 4];
+arr._shift();
+console.log(arr); // [ 2, 3, 4 ]
+```
