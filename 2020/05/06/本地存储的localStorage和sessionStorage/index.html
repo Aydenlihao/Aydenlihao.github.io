@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title> - 豪不无趣</title>
+  <title>本地存储的localStorage和sessionStorage - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,HTML5">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,10 +63,12 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content=" - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="本地存储的localStorage和sessionStorage - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
+  
+    <meta property="og:article:tag" content="HTML5">
   
 
   
@@ -475,19 +477,357 @@
 
     <div id="barba-wrapper">
       <div class="barba-container"  data-namespace="post">
-        <div class="theme-404 mdui-valign">
-  <div class="mdui-center">
-    <i class="mdui-icon material-icons mdui-center theme-404__error">&#xe001;</i>
-    <div class="theme-404__button">
-      <a href="/" class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-center">
-        404 - 返回首页
-      </a>
+        
+
+
+
+  
+<link rel="stylesheet" href="/css/prism/darcula.min.css">
+
+
+
+  
+<link rel="stylesheet" href="/css/prism/line-number.min.css">
+
+
+
+<div class="theme-post">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header mdui-color-theme">
+    <div class="theme-post__header__title mdui-text-truncate">
+      本地存储的localStorage和sessionStorage
+    </div>
+    <div class="theme-spacer"></div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span>编写时间：</span>
+        <span style="float: right">5月 06, 2020</span>
+        
+      </div>
+      
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        文章二维码
+      </li>
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEMElEQVR42u3aS3bbMBAEQN3/0skBHMndM7QjQoWVn0WRRGmB+T3+WMF6IMCECRMmTJgsTJgwYXp7pke8km99vSZ/1rMrn3332ZVfnz7cIyZMmDBhOojpm6MxuOb1JvMNvH7i6429/nnaPWLChAkTpvOY8pd+9mmygVmg0IYdF+wREyZMmDB9MFNySP9E8jwLRzBhwoQJE6YNU57c5iXXzXcxYcKECROmTQG0bUnmx3+SPM+u/w+1cEyYMGHC9GZMm8P1Ln//6nwTJkyYMGF6G6bZaluY7VjPJnSYlYb/cX9MmDBhwnQEU56yJk3KpK24KdTmafbrvzFhwoQJ06cxzTY/az0mx/msLJsnwJcVeTFhwoQJ09sz5clnW07df5qnuMU4zmxwBxMmTJgw3Zxp3xScJcZ5OXif+iaBCyZMmDBhOpWpLekmxdP2W9emym1YU3R9MWHChAnTrZja0md9rK5T31nbNX//KCDAhAkTJkw3Z2ofNjto8wZkm+7OfuA6IMCECRMmTDdkaoODfKyn3Uyb9M4ChWIwCBMmTJgwHco0a2rOEt28+Dvbdtv+xIQJEyZMn8CUJ6ibVHOTKrdN0+Q+mDBhwoTpVKZN8pkXZ2d3mJV0Nw1aTJgwYcJ0KlM++tke821ReHbYz55bpL6YMGHChOnmTLMDPoFLirOzMZ28+DscM8KECRMmTAcxJS+aBxDtSGvLMUtlX9+hSH0xYcKECdPNmdpA4ScGejaNzP1eMGHChAnTSUybQZx2G7NBnzyYuPj9MWHChAnTQUyzV8wLpm0RedPUnO0CEyZMmDCdypQ3EWePLF4rOKTbIGZVXMaECRMmTEcwXXus7v+/KdfmJd0oOceECRMmTAcxbZLM2VjPrKzcNj7bQAcTJkyYMJ3KtE96N8f/piE6a68Oa+GYMGHChOmGTLOxmM3QT36H6Ngu71nsCxMmTJgwHcfUNiDbtuUsRNgM9Lz+e9j1xYQJEyZMt2LaJMCzMnEbZLQl2iTxHlYIMGHChAnTDZlmhdRi/GWxgdk7tOEFJkyYMGE6mylvWObpcVuizVPrTYG4Tq0xYcKECdNBTHny2Q7x5CHCvqw8KxBjwoQJE6ZPYJqN77RYm9HV9v55UFK0MzFhwoQJ0w2ZNgMxbbF1Flgk1+dHfpGWY8KECROmI5jaFTUCL+LIS7Szd6vjJkyYMGHCdEOmR7xarDYBvqq43N7n6TtjwoQJE6aDmPabTBLLTUCQP7E++GcVAkyYMGHCdEOm/RhNXupt1+YHm7FiwoQJE6bPZErIZgXiYdMxbsfWPzwmTJgwYfpIpjah3Tcmk1S2DQt+KfXFhAkTJkxvxpRsYPbpPsVt26JtSffidiYmTJgwYXozptkG2kGZfbu0TXdf7/SbHWHChAkTpiOYrCggsDBhwoQJEyZMFiZMmN5l/QU75yBPfNSxTwAAAABJRU5ErkJggg==" style="cursor: auto">
+    </ul>
+  </div>
+
+
+      
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/index.html" target="_blank" class="mdui-ripple">
+                分享到Facebook
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/index.html" target="_blank" class="mdui-ripple">
+                分享到Google+
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/index.html&title=本地存储的localStorage和sessionStorage" target="_blank" class="mdui-ripple">
+                分享到Linkedin
+            </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=本地存储的localStorage和sessionStorage&url=http://yoursite.com//2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+                分享到Twitter
+            </a>
+        </li>
+      
+
+      
+
+    </ul>
+  </div>
+
+
     </div>
   </div>
+  <div class="theme-post__warpper
+    
+      theme-post__warpper--center
+    
+  ">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card mdui-hoverable">
+        <section class="theme-post__card__warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </section>
+        
+        
+          <section class="mdui-card-media">
+            <img src="/images/random/6.png"/>
+          </section>
+        
+        <section class="mdui-typo theme-post__card__content">
+          
+        </section>
+
+        
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              本文许可协议：
+              
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+              
+            </span>
+            <br />
+            <span>本文永久链接：<a href="http://yoursite.com/2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/">http://yoursite.com/2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/</a></span>
+            
+              <br />
+              <span>本文Markdown：<a href="http://yoursite.com/2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/本地存储的localStorage和sessionStorage.md">http://yoursite.com/2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/本地存储的localStorage和sessionStorage.md</a></span>
+            
+          </section>
+        
+
+        
+          <section class="mdui-card-actions theme-post__card__actions">
+            
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            
+            <div class="theme-spacer"></div>
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/categories/JavaScript/">
+                    <span>JavaScript</span>
+                  </a>
+                
+              </div>
+            
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/tags/HTML5/">
+                    <span>HTML5</span>
+                  </a>
+                
+              </div>
+            
+          </section>
+        
+
+        
+          
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
+          
+        
+      </article>
+      
+    </div>
+  </div>
+
+  <div class="theme-spacer"></div>
+
+  
+
+  
+    <div class="theme-post__pagination mdui-color-theme">
+  
+    <div class="theme-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="theme-post__pagination__next mdui-ripple mdui-valign">
+      <a href="/2020/04/30/%E6%95%B0%E7%BB%84%E7%9A%84push%E3%80%81unshift%E3%80%81pop%E3%80%81shift%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0/" class="theme-post__pagination__next__content mdui-text-right">
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          数组的push、unshift、pop、shift方法实现
+        </div>
+      </a>
+    </div>
+    
+</div>
+
+  
+
+  
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title">打赏</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          
+            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
+              
+              
+              
+              wechat
+            </a>
+          
+            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
+              
+              
+              
+              paypay
+            </a>
+          
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
+      </div>
+    </div>
+  
 </div>
 <script type="text/javascript">
-  document.title = '404 - 豪不无趣'
+  themeRuntime.scriptsMap.post = [];
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
+    tocHighlight()
+    function tocHighlight() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
+      }
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
+      }
+      var listens = [];
+      var cardToc = document.querySelector('.theme-post__toc');
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
+    }
+  }
 </script>
+
+<script type="text/javascript">
+  (function() {
+    var postLastModifiedDate = 1588732878060
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('.theme-post__card__warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+  var images = document.querySelectorAll('.theme-post__card__content img')
+  for (i = 0; i < images.length; i++) {
+    //console.log('image added', i)
+    images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>Ayden li</span><div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+
+
 
       </div>
     </div>
