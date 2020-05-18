@@ -63,6 +63,12 @@ localStorage.hasOwnProperty("youCat"); // false
 window.addEventListener("storage", function onStorageChange(event) {});
 ```
 
+event.key 属性：属性值为在 session 或 localStorage 中被修改的数据键值。
+event.oldValue 属性：属性值为在 sessionStorage 或 localStorage 中被修改的值。
+event.newValue 属性：属性值为在 sessionStorage 或 localStorage 中被修改后的值
+event.url 属性：属性值为修改 sessionStorage 或 localStorage 中值的页面的 URL 地址
+event.storageArea 属性 : 属性值为被变动的 sessionStorage 对象或 localStorage 对象
+
 ## 原理
 
 在 HTML5 中，本地储存是一个 window 的属性，包括 localStrong 和 sessionStrong。localStrong 和 sessionStrong 都是储存在 window 里的 strong 实例对象，我们对 Window.sessionStorage 和 Window.localStorage 属性使用其实就是改变了 window 本地存储的对象。
