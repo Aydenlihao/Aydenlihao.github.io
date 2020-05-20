@@ -103,10 +103,6 @@ category: css
     </div>
   </body>
   <style type="text/css">
-    @font-face {
-      font-family: "Fira Sans";
-      src: url("../Fira-Sans/firasans/FiraSans-Bold.ttf");
-    }
     body {
       font: 16px/1.5 sans-serif;
       font-family: "Fira Sans", sans-serif;
@@ -167,7 +163,65 @@ category: css
 <label style="background-color: #fff5f5;color:#ff502c;">clip-path</label>定义用户如何查看元素，<label style="background-color: #fff5f5;color:#ff502c;">shape-outside</label>定义其他 HTML 元素如何查看元素。
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
+  </head>
+  <body>
+    <div class="box">
+      <img id="box" src="./round-balloon.png" />
+      We had agreed, my companion and I, that I should call for him at his
+      house, after dinner, not later than eleven o’clock. This athletic young
+      Frenchman belongs to a small set of Parisian sportsmen, who have taken up
+      “ballooning” as a pastime. After having exhausted all the sensations that
+      are to be found in ordinary sports, even those of “automobiling” at a
+      breakneck speed, the members of the “Aéro Club” now seek in the air, where
+      they indulge in all kinds of daring feats, the nerve-racking excitement
+      that they have ceased to find on earth.
+    </div>
+    <div>
+      <button id="one">circle</button>
+      <button id="two">ellipse</button>
+      <button id="three">url</button>
+      <button id="four">polygon</button>
+    </div>
+  </body>
+  <style type="text/css">
+    body {
+      font: 16px/1.5 sans-serif;
+      font-family: "Fira Sans", sans-serif;
+    }
+    .box {
+      width: 300px;
+    }
+    .box img {
+      width: 150px;
+      float: left;
+    }
+  </style>
+  <script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    one.onclick = function (params) {
+      box.style.shapeOutside = "circle(50%)";
+    };
+    two.onclick = function (params) {
+      box.style.shapeOutside = "ellipse(130px 140px at 20% 20%)";
+    };
+    three.onclick = function (params) {
+      box.style.shapeOutside = "url(./round-balloon.png)";
+    };
+    four.onclick = function (params) {
+      box.style.shapeOutside = "polygon(50% 0, 100% 50%, 50% 100%, 0 50%)";
+    };
+  </script>
+</html>
 ```
 
 ## background-clip
@@ -175,7 +229,63 @@ category: css
 <label style="background-color: #fff5f5;color:#ff502c;">backgroundclip</label> CSS 属性设置元素的背景是否扩展到其<label style="background-color: #fff5f5;color:#ff502c;">border</label> 、<label style="background-color: #fff5f5;color:#ff502c;">padding</label> 或<label style="background-color: #fff5f5;color:#ff502c;">content</label> 框之下
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
+  </head>
+  <body>
+    <div id="box" class="box">
+      This is the content of the element.
+    </div>
+    <div>
+      <button id="one">broder</button>
+      <button id="two">padding</button>
+      <button id="three">content</button>
+      <button id="four">text</button>
+    </div>
+  </body>
+  <style type="text/css">
+    body {
+      font: 16px/1.5 sans-serif;
+      font-family: "Fira Sans", sans-serif;
+    }
+    .box {
+      background-image: url("./hand.jpg");
+      color: #fff;
+      padding: 20px;
+      border: 10px dashed #333;
+      font-size: 2em;
+      font-weight: 700;
+    }
+  </style>
+  <script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    one.onclick = function (params) {
+      box.style.backgroundClip = "border-box";
+      box.style.color = "#000";
+    };
+    two.onclick = function (params) {
+      box.style.backgroundClip = "padding-box";
+      box.style.color = "#000";
+    };
+    three.onclick = function (params) {
+      box.style.backgroundClip = "content-box";
+      box.style.color = "#000";
+    };
+    four.onclick = function (params) {
+      box.style.backgroundClip = "text";
+      box.style.webkitBackgroundClip = "text";
+      box.style.webkitTextFillColor = "transparent";
+    };
+  </script>
+</html>
 ```
 
 ## background-attachment
@@ -189,7 +299,54 @@ category: css
  -webkit-background-clip: text; -webkit-text-fill-color: transparent;">inherit：</label>规定应该从父元素继承属性设置值。
 
 ```html
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        background-image: url("./hand.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
 
+  <body>
+    <p>图像不会随页面的其余部分滚动。</p>
+    <p>A</p>
+    <p>B</p>
+    <p>C</p>
+    <p>D</p>
+    <p>E</p>
+    <p>F</p>
+    <p>G</p>
+    <p>H</p>
+    <p>I</p>
+    <p>J</p>
+    <p>K</p>
+    <p>L</p>
+    <p>M</p>
+    <p>N</p>
+    <p>O</p>
+    <p>P</p>
+    <p>Q</p>
+    <p>R</p>
+    <p>S</p>
+    <p>T</p>
+    <p>W</p>
+    <p>X</p>
+    <p>Y</p>
+    <p>Z</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+  </body>
+</html>
 ```
 
 ## outline
@@ -200,5 +357,21 @@ outline-style：设置轮廓样式
 outline-width：设置轮廓的宽度
 
 ```html
+<html>
+  <head>
+    <style type="text/css">
+      p {
+        border: red solid thin;
+        outline: #00ff00 dotted thick;
+      }
+    </style>
+  </head>
 
+  <body>
+    <p>
+      <b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8
+      （以及更高版本） 才支持 outline 属性。
+    </p>
+  </body>
+</html>
 ```
