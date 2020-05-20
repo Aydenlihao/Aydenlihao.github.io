@@ -152,9 +152,54 @@ category: css
 ## user-select
 
 每当我们有不想让用户选择的文本，或者相反，如果发生了双击或上下文单击，希望选择所有文本时，<label style="background-color: #fff5f5;color:#ff502c;">user-select</label>属性将非常有用。
+none:不允许选中
+all:选中全部
+text:可以选择文本
+element：可以选择文本，但选择范围受元素边界的约束
 
 ```html
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>You should be able to select this text.</p>
+    <p class="unselectable">Hey, you can't select this text!</p>
+    <p class="all">Clicking once will select all of this text.</p>
+    <p class="text"><img src='./round-balloon.png'/><div>Clicking once will select all of this text</div></p>
+    <p class="texts"><img src='./round-balloon.png'/><div>Clicking once will select all of this text</div></p>
+    <style>
+      .unselectable {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
+      .all {
+        -moz-user-select: all;
+        -webkit-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+      }
+      .text {
+        -moz-user-select: text;
+        -webkit-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+      .texts{
+        -moz-user-select: element;
+        -webkit-user-select: element;
+        -ms-user-select: element;
+        user-select: element;
+      }
+    </style>
+  </body>
+</html>
 ```
 
 ## shape-outside
@@ -355,6 +400,17 @@ category: css
 outline-color：设置轮廓颜色
 outline-style：设置轮廓样式
 outline-width：设置轮廓的宽度
+<label style="background-image: -webkit-linear-gradient(bottom, red, #fd8403, yellow);  
+ -webkit-background-clip: text; -webkit-text-fill-color: transparent;">outline-style：</label>
+
+- dotted:点状
+- dashed:虚线
+- solid: 实线
+- double:双线
+- groove: 凹槽(3d)
+- ridge: 山脊(3d)
+- inset: 内凹(3d)
+- outset: 外凸(3d)
 
 ```html
 <html>
