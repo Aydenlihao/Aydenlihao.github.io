@@ -19,7 +19,55 @@ category: css
 -webkit-background-clip: text; -webkit-text-fill-color: transparent;">vertical-lr：</label>对于左对齐(ltr)脚本，内容从上到下垂直流动，下一垂直行位于上一行右侧。对于右对齐(rtr)脚本，内容从上到下垂直流动，下一垂直位于上一行左侧。
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" class="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+    <div>
+      <button id="one">horizontal-tb</button>
+      <button id="two">vertical-lr</button>
+      <button id="three">vertical-rl</button>
+    </div>
+  </body>
+  <style>
+    .box {
+      width: 400px;
+      height: 300px;
+      writing-mode: horizontal-tb;
+    }
+    .box div {
+      background: red;
+      margin: 10px;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var box = document.getElementById("box");
+    one.onclick = function (params) {
+      box.style.writingMode = "horizontal-tb";
+    };
+    two.onclick = function (params) {
+      box.style.writingMode = "vertical-lr";
+    };
+    three.onclick = function (params) {
+      box.style.writingMode = "vertical-rl";
+    };
+  </script>
+</html>
 ```
 
 ## font-variant-numeric
@@ -30,7 +78,79 @@ category: css
 请注意，<label style="background-color: #fff5f5;color:#ff502c;">font-variant-numeric</label>是<label style="background-color: #fff5f5;color:#ff502c;">font-feature-setting</label>组属性的一部分。
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" />
+  </head>
+  <body>
+    <div id="box" class="box">
+      1234567890
+    </div>
+    <div>
+      <button id="one">normal</button>
+      <button id="two">ordinal</button>
+      <button id="three">slashed-zero</button>
+      <button id="four">lining-nums</button>
+      <button id="five">oldstyle-nums</button>
+      <button id="six">proportional-nums</button>
+      <button id="seven">tabular-nums</button>
+      <button id="eight">diagonal-fractions</button>
+      <button id="nine">stacked-fractions</button>
+    </div>
+  </body>
+  <style type="text/css">
+    @font-face {
+      font-family: "Fira Sans";
+      src: url("../Fira-Sans/firasans/FiraSans-Bold.ttf");
+    }
+    body {
+      font: 16px/1.5 sans-serif;
+      font-family: "Fira Sans", sans-serif;
+    }
+  </style>
+  <script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    var five = document.getElementById("five");
+    var six = document.getElementById("six");
+    var seven = document.getElementById("seven");
+    var eight = document.getElementById("eight");
+    var nine = document.getElementById("nine");
+    one.onclick = function (params) {
+      box.style.fontVariantNumeric = "normal";
+    };
+    two.onclick = function (params) {
+      box.style.fontVariantNumeric = "ordinal";
+    };
+    three.onclick = function (params) {
+      box.style.fontVariantNumeric = "slashed-zero";
+    };
+    four.onclick = function (params) {
+      box.style.fontVariantNumeric = "lining-nums";
+    };
+    five.onclick = function (params) {
+      box.style.fontVariantNumeric = "oldstyle-nums";
+    };
+    six.onclick = function (params) {
+      box.style.fontVariantNumeric = "proportional-nums";
+    };
+    seven.onclick = function (params) {
+      box.style.fontVariantNumeric = "tabular-nums";
+    };
+    eight.onclick = function (params) {
+      box.style.fontVariantNumeric = "diagonal-fractions";
+    };
+    nine.onclick = function (params) {
+      box.style.fontVariantNumeric = "stacked-fractions";
+    };
+  </script>
+</html>
 ```
 
 ## user-select
