@@ -1,5 +1,5 @@
 ---
-title: JavaScript好用还未火的注解@Decorator
+title: JavaScript好用的注解@Decorator
 date: 2020-06-03 14:42:48
 tags:
   - JavaScript基础
