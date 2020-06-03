@@ -306,7 +306,7 @@
               <a href="/categories/JavaScript/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 JavaScript
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">3</span>
               </a>
             
               <a href="/categories/css/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
@@ -339,16 +339,22 @@
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
               </a>
             
-              <a href="/tags/%E6%95%B0%E7%BB%84/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                数组
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-              </a>
-            
               <a href="/tags/HTML5/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 HTML5
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">3</span>
+              </a>
+            
+              <a href="/tags/JavaScript%E5%9F%BA%E7%A1%80/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                JavaScript基础
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+              </a>
+            
+              <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                排序算法
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
               </a>
             
           </div>
@@ -464,7 +470,7 @@
     
       <br />
       <span>
-        最后更新于: 5月 26, 2020
+        最后更新于: 6月 03, 2020
       </span>
     
     
@@ -600,7 +606,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/27.png"/>
+            <img src="/images/random/7.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -608,7 +614,8 @@
 <h2 id="内联缓存是怎么运行的"><a href="#内联缓存是怎么运行的" class="headerlink" title="内联缓存是怎么运行的"></a>内联缓存是怎么运行的</h2><p>我们可以通过分析一段字节码的运行来看一下内联缓存的运作，如果不了解字节码执行的同学可以先看 V8 引擎详解——字节码是如何执行的先来了解一下。<br>先来看下面一段代码</p>
 <figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.y = <span class="number">4</span>;</span><br><span class="line">  obj.x += <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> obj.x;</span><br><span class="line">&#125;</span><br><span class="line">test(&#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;);</span><br></pre></td></tr></table></div></figure>
 
-<p>将 function 转成字节码的结构如图：<br><img src="/images/inline01.png" alt=""></p>
+<p>将 function 转成字节码的结构如图：</p>
+<p><img src="/images/inline01.png" alt=""></p>
 <p>我们分析一下这段字节码(本文重点在于 IC 所以会侧重于涉及 IC 部分)：</p>
 <ul>
 <li>进入函数先进行栈的检查，然后会将小数字 4 存入累加器。<br><img src="/images/inline02.png" alt=""></li>
@@ -715,7 +722,17 @@
   
     <div class="theme-post__pagination mdui-color-theme">
   
-    <div class="theme-spacer mdui-hidden-xs"></div>
+    <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
+      <a href="/2020/06/03/JavaScript%E6%B3%A8%E8%A7%A3/" class="theme-post__pagination__prev__content mdui-text-left">
+        <div>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          JavaScript好用还未火的注解@Decorator
+        </div>
+      </a>
+    </div>
   
 
   
@@ -838,7 +855,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1590476364638
+    var postLastModifiedDate = 1590492683377
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
