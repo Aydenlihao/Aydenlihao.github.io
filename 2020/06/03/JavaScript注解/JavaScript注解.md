@@ -53,6 +53,7 @@ enumerable: false, // 是否可以枚举（for in 循环能否遍历的到）
 configurable: true, // 是否可以配置（是否可以用 delete 删除）
 writable: true // 是否可以修改（为 false 的时候，只是修改没起作用，不会报错）
 }
+修饰类就相当于对类进行了一次封装，重新封装的类拥有了指定的函数或执行了指定操作。
 
 ### method Decorator
 
@@ -82,28 +83,33 @@ const math = new Math();
 math.add(2, 4);
 ```
 
+修饰函数相当于对指定函数添加了响应事件、回调函数、监听事件。
+
 ### propty Decorator
 
 ```javaScript
+
 class C {
   @readonly(false)
-  method() { console.log('cat') }
+  methods = "cat";
 }
 
 function readonly(value) {
   return function (target, key, descriptor) {
-	/**
-	* 此处 target 为 C.prototype;
-	* key 为 method;
-    * 原 descriptor 为：{ value: f, enumarable: false, writable: true, configurable: true }
-	*/
-    descriptor.writable = value
-    return descriptor
-  }
+    /**
+     * 此处 target 为 C.prototype;
+     * key 为 method;
+     * 原 descriptor 为：{ value: f, enumarable: false, writable: true, configurable: true }
+     */
+    descriptor.writable = value;
+    return descriptor;
+  };
 }
 
-const c = new C()
-c.method = () => console.log('dog')
+const c = new C();
+c.methods = "bog";
 
-c.method()
+console.log(c);
 ```
+
+修饰属性相当于对指定属性添加或者修改了属性对象的访问器属性
