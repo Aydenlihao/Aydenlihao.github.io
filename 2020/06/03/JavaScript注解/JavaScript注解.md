@@ -121,58 +121,31 @@ console.log(c);
 Java 的 Decorator 功能强大，不仅有丰富的 Decorator，而且 Decorator 还可以串联。坏消息：亲测 JavaScript Decorator 不能串联，存在覆盖问题，也就是优先级关系：Method Decorator > Class Decorator。当一个 Method 上定义了 Decorator，则 Class Decorator 则不起作用。
 
 ```javascript
-cconst classDecoratorBuilder = (name) => {
-  console.log(1111);
-  return (target) => {
-    Object.getOwnPropertyNames(target.prototype).forEach((key) => {
-      const func = target.prototype[key];
-      target.prototype[key] = (...args) => {
-        console.log(`>>>>> class-decorator ${name}`);
-        func.apply(this, args);
-      };
-    });
-    return target;
-  };
-};
-const log = () => {
-  return (target, propertyKey, descriptor) => {
-    const func = descriptor.value;
-    return {
-      get() {
-        return (...args) => {
-          console.log(`>>>>> method-decorator`);
-          func.apply(this, args);
-        };
-      },
-      set(newValue) {
-        return newValue;
-      },
-    };
-  };
+const promiseAPIBuilder = (code) => {
+  // 模拟生成各种接口
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (code === 0) {
+        resolve({
+          code,
+          message: "success",
+          data: [],
+        });
+      } else if (code === 404) {
+        reject({
+          code,
+          message: "接口不存在",
+        });
+      } else {
+        reject({
+          code,
+          message: "服务端异常",
+        });
+      }
+    }, 1000);
+  });
 };
 
-// Decorator不能串联
-// @classDecorator1
-@classDecoratorBuilder(1)
-class Person {
-  // @methodDecorator1 // 不能串联，会报错
-  @log(2) // class Decorator会被覆盖
-  sayName() {
-    console.log("sayName : ", this.name);
-  }
-
-  eat(food) {
-    console.log("eat : ", food);
-  }
-}
-const person = new Person();
-person.sayName();
-person.eat("rice");
-```
-
-## 实际使用
-
-```javascript
 const showTipDecoratorBulder = (errorHandler) => (
   target,
   propertyKey,
@@ -214,7 +187,9 @@ class PageAPI {
 const api = new PageAPI();
 
 const successAPI = async () => {
-  const res = await api.successAPI(); // error 没有 catch
+  const res = await api.successAPI();
+  console.log(res);
+  // error 没有 catch
   if (!res) return;
   console.log("接口调用成功后的逻辑1");
 };
