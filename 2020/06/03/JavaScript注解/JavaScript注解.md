@@ -46,13 +46,6 @@ let obj = new MyClass();
 obj.foo()
 ```
 
-descriptor 对象
-{
-value：specifiedFunction,// 置换调用
-enumerable: false, // 是否可以枚举（for in 循环能否遍历的到）
-configurable: true, // 是否可以配置（是否可以用 delete 删除）
-writable: true // 是否可以修改（为 false 的时候，只是修改没起作用，不会报错）
-}
 修饰类就相当于对类进行了一次封装，重新封装的类拥有了指定的函数或执行了指定操作。
 
 ### method Decorator
@@ -82,6 +75,15 @@ const math = new Math();
 // passed parameters should get logged now
 math.add(2, 4);
 ```
+
+装饰器第一个参数是类的原型对象,第二个参数是所要装饰的属性名,第三个参数是该属性的描述对象
+descriptor 对象
+{
+value：specifiedFunction,// 置换调用
+enumerable: false, // 是否可以枚举（for in 循环能否遍历的到）
+configurable: true, // 是否可以配置（是否可以用 delete 删除）
+writable: true // 是否可以修改（为 false 的时候，只是修改没起作用，不会报错）
+}
 
 修饰函数相当于对指定函数添加了响应事件、回调函数、监听事件。
 
@@ -113,3 +115,124 @@ console.log(c);
 ```
 
 修饰属性相当于对指定属性添加或者修改了属性对象的访问器属性
+
+### Decorator 优先级，串联
+
+Java 的 Decorator 功能强大，不仅有丰富的 Decorator，而且 Decorator 还可以串联。坏消息：亲测 JavaScript Decorator 不能串联，存在覆盖问题，也就是优先级关系：Method Decorator > Class Decorator。当一个 Method 上定义了 Decorator，则 Class Decorator 则不起作用。
+
+```javascript
+cconst classDecoratorBuilder = (name) => {
+  console.log(1111);
+  return (target) => {
+    Object.getOwnPropertyNames(target.prototype).forEach((key) => {
+      const func = target.prototype[key];
+      target.prototype[key] = (...args) => {
+        console.log(`>>>>> class-decorator ${name}`);
+        func.apply(this, args);
+      };
+    });
+    return target;
+  };
+};
+const log = () => {
+  return (target, propertyKey, descriptor) => {
+    const func = descriptor.value;
+    return {
+      get() {
+        return (...args) => {
+          console.log(`>>>>> method-decorator`);
+          func.apply(this, args);
+        };
+      },
+      set(newValue) {
+        return newValue;
+      },
+    };
+  };
+};
+
+// Decorator不能串联
+// @classDecorator1
+@classDecoratorBuilder(1)
+class Person {
+  // @methodDecorator1 // 不能串联，会报错
+  @log(2) // class Decorator会被覆盖
+  sayName() {
+    console.log("sayName : ", this.name);
+  }
+
+  eat(food) {
+    console.log("eat : ", food);
+  }
+}
+const person = new Person();
+person.sayName();
+person.eat("rice");
+```
+
+## 实际使用
+
+```javascript
+const showTipDecoratorBulder = (errorHandler) => (
+  target,
+  propertyKey,
+  descriptor
+) => {
+  const func = descriptor.value;
+  return {
+    get() {
+      return (...args) => {
+        return Promise.resolve(func.apply(this, args)).catch((error) => {
+          errorHandler && errorHandler(error);
+        });
+      };
+    },
+    set(newValue) {
+      return newValue;
+    },
+  };
+};
+// ****** 构造一个提示错误的`Decorator`
+const showTipDecorator = showTipDecoratorBulder((error) => {
+  console.log(`Decorator error 消息提示 : ${error.message}`);
+});
+
+// ****** class 写法避开限制
+class PageAPI {
+  @showTipDecorator
+  successAPI() {
+    return promiseAPIBuilder(0);
+  }
+  @showTipDecorator
+  error404API() {
+    return promiseAPIBuilder(404);
+  }
+  errorWithoutCatchAPI() {
+    return promiseAPIBuilder(500);
+  }
+}
+const api = new PageAPI();
+
+const successAPI = async () => {
+  const res = await api.successAPI(); // error 没有 catch
+  if (!res) return;
+  console.log("接口调用成功后的逻辑1");
+};
+successAPI();
+
+const error404API = async () => {
+  const res = await api.error404API(); // error 没有 catch
+  if (!res) return;
+  console.log("接口调用成功后的逻辑2");
+};
+error404API();
+
+const errorWithoutCatchAPI = async () => {
+  const res = await api.errorWithoutCatchAPI(); // error 没有 catch
+  if (!res) return;
+  console.log("接口调用成功后的逻辑3");
+};
+errorWithoutCatchAPI();
+```
+
+Decorator 修饰 API 接口管理文件
