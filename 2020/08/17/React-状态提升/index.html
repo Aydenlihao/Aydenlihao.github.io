@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>BFC(Block Fommatting context) - 豪不无趣</title>
+  <title>React 状态提升 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui,视图">
+  <meta name="keywords" content="blog, hexo, mdui">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,12 +63,10 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="BFC(Block Fommatting context) - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="React 状态提升 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
-  
-    <meta property="og:article:tag" content="视图">
   
 
   
@@ -525,17 +523,13 @@
   <div class="theme-post__background mdui-color-theme"></div>
   <div class="theme-post__header mdui-color-theme">
     <div class="theme-post__header__title mdui-text-truncate">
-      BFC(Block Fommatting context)
+      React 状态提升
     </div>
     <div class="theme-spacer"></div>
     <div class="theme-post__header__actions mdui-valign">
       <div>
         <span>编写时间：</span>
-        <span style="float: right">4月 23, 2020</span>
-        
-        <br>
-          <span>最后修改时间：</span>
-          <span>8月 17, 2020</span>
+        <span style="float: right">8月 17, 2020</span>
         
       </div>
       
@@ -547,7 +541,7 @@
       <li class="mdui-list-item" style="cursor: auto">
         文章二维码
       </li>
-        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACxUlEQVR42u3aQU4DMRAEwPz/03BFQoTusVGCXT6hZQUu5zBxzzw+rlwPbGxsbGxsbGxs7LdkP+L19f3kL3z/7U9PakC5Z2xsbOwb2Mm/ydnJRp8fSr6f/B1sbGzsG9hJ0XoOSzaXH2JyNEWhxcbGxsYuqfkVZXaZwcbGxsZeL2DrxW+9WGJjY2NjDwOasiy1oX9bOP88S8PGxsZ+e/as0fvan1/W38bGxsZ+M/autWtMpw22ih1iY2NjH8rOhylnZaO9SCQthzZgwsbGxj6bPRuvmUVFyWhm8nwYRWFjY2Mfyl4JkvJN563ZIiRqCyE2Njb20ez2S39e0tphyhls2BXBxsbGPoidlIrZGGVSfmaXjfpDwsbGxj6a3cZAbYs3P5q6LOX7xMbGxj6UPYuNZgM6beHJG8nD4UtsbGzsI9jrV4KPcu1t62JjY2Njr4wz7iLlbealdgI2Njb2Bex2cy1sVyzVHgc2Njb2Pez2ypHHPbNwahZabWj0YmNjY/8r9srX/ZVRm3xYMy+fvzzBxsbGvoCdl4r8CGaDm3npylsU2NjY2Lex25AoGbXJG7RJq6A9AmxsbOx72LuaAe0ITrKHlWYwNjY29qnstrGabKs9yrxczdoY2NjY2Dew8ytEHtDn7eSk1OXlExsbG/tm9splY3Y5yUvUbJ/Y2NjY97BXNp0HPUWxGUVIvwRh2NjY2Eez20vFegO4PYL1ywk2Njb2Dey8OM3ez2OptukbXWywsbGxD2XPLgkte3apyMOv6E1sbGzsQ9mPeM2ou4L+fJCoqNvY2NjYB7HbojUrTs+R+dG3+8fGxsa+h92GNbPitx5UDcdDsbGxsbHjEKd90hbFJIrCxsbGxl4J8duhnL1XGmxsbOyb2Umo9Nqtt40NbGxs7HvYuxq9s5GaPGDKPxhsbGzse9j3LGxsbGxsbGxsbOy3WZ+rHpED5UFfagAAAABJRU5ErkJggg==" style="cursor: auto">
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3bwU7DMBAE0P7/T8MVCTWdWReR2i+nSgRnnyux8k54fB15PbCxsbGxsbGxsbFvyX7E18/7f6/wbM3rZ+U/XakZGxsb+wT2iz/9T9htcW3pST35PdjY2NgnsNumdd3Mrtd5VnrbMouasbGxsbGDz9eYWdvDxsbGxv7rBpYModqx1KxNYmNjY2MXA5oRchYA3GKWho2NjX179izo/d/P/5ZvY2NjY9+M3V4rTWvWrvKm9aJybGxs7E3ZCaCFvXfklB+NXoyisLGxsbdmr4QEeaC7cuxJgoQX92BjY2Nvyl5ZdGV8376s037GxsbGxs6PDbMXK5Pn5i0QGxsb+2R2PgxqAetjo/e+EoSNjY29KzsvN29yeUErjaptY9jY2Nh7s1eOJe0Qv40ZZm0PGxsb+xx2e9hoQ4I8DM4ryeNkbGxs7HPYyWPaF3TawPivV8DGxsbeld02rdnLNO2YqT1yRJEGNjY29tbsZEA/CxLag0oSOWNjY2Nj56P89WNAEcTGY6w2bMDGxsbem91uQR7x5q9vzg4z9deGjY2NfRg7X252LMlDiFncO2xg2NjY2B/IbuPVWRNqN+u9rQsbGxt7b3bbJNqB/qxZzkZIw/8ewMbGxv5w9qO82mNJMmDKQ4IkqIiGStjY2NgbsdvQtB0P5cFAfs9sOIWNjY19Djs/kORltceVttVFa2JjY2Nvyk6aQX7AiBrJaItnkTM2Njb2CezoF4ISZ3HsbBPzERU2Njb2mexkU9YHQ+vRb9LGsLGxsU9gtxFvUlw+eMrXbwdVb8u3sbGxsT+EPWst11swG1S1UUHR6rCxsbEPYK8Mj9qxVP6sYaw7S0WwsbGxD2Dnhea/m29H/pVgY2NjY7fstpR8zNRuZREPYGNjY2/Hzo8W7VCpLjGIFvIasLGxsU9grwe9bftZwbTHFWxsbOy92edc2NjY2NjY2NjY2Le5vgFPifeq4aCujQAAAABJRU5ErkJggg==" style="cursor: auto">
     </ul>
   </div>
 
@@ -562,7 +556,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/04/23/BFC-Block-Fommatting-context/index.html" target="_blank" class="mdui-ripple">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html" target="_blank" class="mdui-ripple">
                 分享到Facebook
             </a>
         </li>
@@ -570,7 +564,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/04/23/BFC-Block-Fommatting-context/index.html" target="_blank" class="mdui-ripple">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html" target="_blank" class="mdui-ripple">
                 分享到Google+
             </a>
         </li>
@@ -578,7 +572,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/04/23/BFC-Block-Fommatting-context/index.html&title=BFC(Block Fommatting context)" target="_blank" class="mdui-ripple">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html&title=React 状态提升" target="_blank" class="mdui-ripple">
                 分享到Linkedin
             </a>
         </li>
@@ -590,7 +584,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://twitter.com/intent/tweet?text=BFC(Block Fommatting context)&url=http://yoursite.com//2020/04/23/BFC-Block-Fommatting-context/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+            <a href="https://twitter.com/intent/tweet?text=React 状态提升&url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
                 分享到Twitter
             </a>
         </li>
@@ -606,6 +600,8 @@
   </div>
   <div class="theme-post__warpper
     
+      theme-post__warpper--center
+    
   ">
     <div class="theme-post__warpper__container">
       <article class="mdui-card theme-post__card mdui-hoverable">
@@ -618,59 +614,11 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/26.png"/>
+            <img src="/images/random/29.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
-          <h2 id="什么是-BFC"><a href="#什么是-BFC" class="headerlink" title="什么是 BFC?"></a>什么是 BFC?</h2><p>W3C 对 BFC 的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及 overflow 值不为”visiable”的块级盒子，都会为他们的内容创建新的 BFC（Block Fromatting Context， 即块级格式上下文）。</p>
-<p><strong>块格式化上下文（Block Formatting Context，BFC）</strong> 是 Web 页面的可视化 CSS 渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。</p>
-<p>FC 是 formatting context 的首字母缩写，直译过来是格式化上下文，它是<strong>页面中的一块渲染区域</strong>，有一套渲染规则，决定了其<strong>子元素如何布局，以及和其他元素之间的关系和作用</strong>。</p>
-<h2 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h2><p>一个 HTML 元素要创建 BFC，则满足下列的任意一个或多个条件即可： 下列方式会创建块格式化上下文：</p>
-<ul>
-<li>根元素()</li>
-<li>浮动元素（元素的 float 不是 none）</li>
-<li>绝对定位元素（元素的 position 为 absolute 或 fixed）</li>
-<li>行内块元素（元素的 display 为 inline-block）</li>
-<li>表格单元格（元素的 display 为 table-cell，HTML 表格单元格默认为该值）</li>
-<li>表格标题（元素的 display 为 table-caption，HTML 表格标题默认为该值）</li>
-<li>匿名表格单元格元素（元素的 display 为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是 HTML table、row、tbody、thead、tfoot 的默认属性）或 inline-table）</li>
-<li>overflow 值不为 visible 的块元素 -弹性元素（display 为 flex 或 inline-flex 元素的直接子元素）</li>
-<li>网格元素（display 为 grid 或 inline-grid 元素的直接子元素） 等等。</li>
-</ul>
-<h2 id="BFC-渲染规则"><a href="#BFC-渲染规则" class="headerlink" title="BFC 渲染规则"></a>BFC 渲染规则</h2><ol>
-<li>BFC 垂直方向边距重叠</li>
-<li>BFC 的区域不会与浮动元素的 box 重叠</li>
-<li>BFC 是一个独立的容器，外面的元素不会影响里面的元素</li>
-<li>计算 BFC 高度的时候浮动元素也会参与计算</li>
-</ol>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
-<li>防止浮动导致父元素高度塌陷<br>现有如下页面代码:</li>
-</ol>
-<figure class="highlight html"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.container</span> &#123;</span></span><br><span class="line">        border: 10px solid red;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#08bdeb</span>;</span></span><br><span class="line">        height: 100px;</span><br><span class="line">        width: 100px;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/images/bfc1.png" alt=""><br>接下来将 inner 元素设为浮动:</p>
-<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#08bdeb</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/images/bfc2.png" alt=""><br>但如果我们对父元素设置 BFC 后, 这样的问题就解决了:</p>
-<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>避免外边距折叠<br>两个块同一个 BFC 会造成外边距折叠，但如果对这两个块分别设置 BFC，那么边距重叠的问题就不存在了。</li>
-</ol>
-<p>现有代码如下:</p>
-<figure class="highlight html"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.container</span> &#123;</span></span><br><span class="line">        background-color: green;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">      <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line">        background-color: lightblue;</span><br><span class="line">        margin: 10px 0;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<p><img src="/images/bfc3.png" alt=""><br>此时三个元素的上下间隔都是 10px, 因为三个元素同属于一个 BFC。 现在我们做如下操作:</p>
-<figure class="highlight html"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bfc"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span></span></span><br></pre></td></tr></table></div></figure>
-
-<p>style 增加:</p>
-<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bfc</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>效果如下:<br><img src="/images/bfc4.png" alt=""><br>可以明显地看到间隔变大了，而且是原来的两倍，符合我们的预期。</p>
-<ol start="3">
-<li>相关链接<br><a href="https://juejin.im/post/5909db2fda2f60005d2093db" target="_blank" rel="noopener">https://juejin.im/post/5909db2fda2f60005d2093db</a></li>
-</ol>
-
+          
         </section>
 
         
@@ -682,10 +630,10 @@
               
             </span>
             <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2020/04/23/BFC-Block-Fommatting-context/">http://yoursite.com/2020/04/23/BFC-Block-Fommatting-context/</a></span>
+            <span>本文永久链接：<a href="http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/">http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/</a></span>
             
               <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2020/04/23/BFC-Block-Fommatting-context/BFC-Block-Fommatting-context.md">http://yoursite.com/2020/04/23/BFC-Block-Fommatting-context/BFC-Block-Fommatting-context.md</a></span>
+              <span>本文Markdown：<a href="http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/React-状态提升.md">http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/React-状态提升.md</a></span>
             
           </section>
         
@@ -699,28 +647,6 @@
             
             <div class="theme-spacer"></div>
             
-              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
-                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
-              </div>
-              <div class="mdui-typo">
-                
-                  <a href="/categories/HTML5/">
-                    <span>HTML5</span>
-                  </a>
-                
-              </div>
-            
-            
-              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
-                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
-              </div>
-              <div class="mdui-typo">
-                
-                  <a href="/tags/%E8%A7%86%E5%9B%BE/">
-                    <span>视图</span>
-                  </a>
-                
-              </div>
             
           </section>
         
@@ -736,52 +662,28 @@
         
       </article>
       
-        <div class="mdui-color-theme theme-post__toc">
-          <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4EC0;&#x4E48;&#x662F;-BFC" data-href="#&#x4EC0;&#x4E48;&#x662F;-BFC"><span class="toc-number"></span> <span class="toc-text">1. &#x4EC0;&#x4E48;&#x662F; BFC?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x89E6;&#x53D1;&#x6761;&#x4EF6;" data-href="#&#x89E6;&#x53D1;&#x6761;&#x4EF6;"><span class="toc-number"></span> <span class="toc-text">2. &#x89E6;&#x53D1;&#x6761;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#BFC-&#x6E32;&#x67D3;&#x89C4;&#x5219;" data-href="#BFC-&#x6E32;&#x67D3;&#x89C4;&#x5219;"><span class="toc-number"></span> <span class="toc-text">3. BFC &#x6E32;&#x67D3;&#x89C4;&#x5219;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5E94;&#x7528;&#x573A;&#x666F;" data-href="#&#x5E94;&#x7528;&#x573A;&#x666F;"><span class="toc-number"></span> <span class="toc-text">4. &#x5E94;&#x7528;&#x573A;&#x666F;</span></a></li></ol></body></html>
-        </div>
-      
     </div>
   </div>
 
   <div class="theme-spacer"></div>
 
   
-    <div class="mdui-color-theme theme-post__toc-fab">
-  <button class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" mdui-menu="{target: '#toc-fab-menu', fixed: true}" id="toc-fab">
-    <i class="mdui-icon material-icons">&#xe242;</i>
-  </button>
-  <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
-    <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4EC0;&#x4E48;&#x662F;-BFC" data-href="#&#x4EC0;&#x4E48;&#x662F;-BFC"><span class="toc-number"></span> <span class="toc-text">1. &#x4EC0;&#x4E48;&#x662F; BFC?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x89E6;&#x53D1;&#x6761;&#x4EF6;" data-href="#&#x89E6;&#x53D1;&#x6761;&#x4EF6;"><span class="toc-number"></span> <span class="toc-text">2. &#x89E6;&#x53D1;&#x6761;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#BFC-&#x6E32;&#x67D3;&#x89C4;&#x5219;" data-href="#BFC-&#x6E32;&#x67D3;&#x89C4;&#x5219;"><span class="toc-number"></span> <span class="toc-text">3. BFC &#x6E32;&#x67D3;&#x89C4;&#x5219;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5E94;&#x7528;&#x573A;&#x666F;" data-href="#&#x5E94;&#x7528;&#x573A;&#x666F;"><span class="toc-number"></span> <span class="toc-text">4. &#x5E94;&#x7528;&#x573A;&#x666F;</span></a></li></ol></body></html>
-  </ul>
-</div>
-
-  
 
   
     <div class="theme-post__pagination mdui-color-theme">
   
-    <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
-      <a href="/2020/04/30/%E6%95%B0%E7%BB%84%E7%9A%84push%E3%80%81unshift%E3%80%81pop%E3%80%81shift%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0/" class="theme-post__pagination__prev__content mdui-text-left">
-        <div>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          数组的push、unshift、pop、shift方法实现
-        </div>
-      </a>
-    </div>
+    <div class="theme-spacer mdui-hidden-xs"></div>
   
 
   
     <div class="theme-post__pagination__next mdui-ripple mdui-valign">
-      <a href="/2020/04/22/hello-world/" class="theme-post__pagination__next__content mdui-text-right">
+      <a href="/2020/08/17/TypeScript-%E7%B1%BB%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          Hello World
+          TypeScript 类型
         </div>
       </a>
     </div>
@@ -893,7 +795,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1597649965504
+    var postLastModifiedDate = 1597658854972
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
