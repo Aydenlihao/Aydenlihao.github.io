@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>React 状态提升 - 豪不无趣</title>
+  <title>标签: TypeScript基础 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -63,7 +63,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="React 状态提升 - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="标签: TypeScript基础 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
@@ -304,7 +304,7 @@
               <a href="/categories/JavaScript/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 JavaScript
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">4</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">5</span>
               </a>
             
               <a href="/categories/css/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
@@ -325,11 +325,17 @@
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
               </a>
             
+              <a href="/categories/TypeScript/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                TypeScript
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+              </a>
+            
           </div>
         </div>
       
       
-        <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item mdui-collapse-item-open">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content">标签</div>
@@ -363,6 +369,18 @@
             
               <a href="/tags/App%E5%BA%94%E7%94%A8/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 App应用
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+              </a>
+            
+              <a href="/tags/React/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                React
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+              </a>
+            
+              <a href="/tags/TypeScript%E5%9F%BA%E7%A1%80/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                TypeScript基础
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
               </a>
@@ -480,7 +498,7 @@
     
       <br />
       <span>
-        最后更新于: 8月 18, 2020
+        最后更新于: 8月 20, 2020
       </span>
     
     
@@ -504,335 +522,269 @@
 
 
     <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="post">
-        
-
-
-
+      <div class="barba-container"  data-namespace="archives">
+        <div class="theme-archive">
   
-<link rel="stylesheet" href="/css/prism/darcula.min.css">
-
-
-
-  
-<link rel="stylesheet" href="/css/prism/line-number.min.css">
-
-
-
-<div class="theme-post">
-  <div class="theme-post__background mdui-color-theme"></div>
-  <div class="theme-post__header mdui-color-theme">
-    <div class="theme-post__header__title mdui-text-truncate">
-      React 状态提升
-    </div>
-    <div class="theme-spacer"></div>
-    <div class="theme-post__header__actions mdui-valign">
-      <div>
-        <span>编写时间：</span>
-        <span style="float: right">8月 17, 2020</span>
-        
-      </div>
-      
-  <div class="theme-post__qrcode">
-    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
-      <i class="mdui-icon material-icons">&#xe337;</i>
-    </button>
-    <ul class="mdui-menu" id="qrcode-menu">
-      <li class="mdui-list-item" style="cursor: auto">
-        文章二维码
-      </li>
-        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3bwU7DMBAE0P7/T8MVCTWdWReR2i+nSgRnnyux8k54fB15PbCxsbGxsbGxsbFvyX7E18/7f6/wbM3rZ+U/XakZGxsb+wT2iz/9T9htcW3pST35PdjY2NgnsNumdd3Mrtd5VnrbMouasbGxsbGDz9eYWdvDxsbGxv7rBpYModqx1KxNYmNjY2MXA5oRchYA3GKWho2NjX179izo/d/P/5ZvY2NjY9+M3V4rTWvWrvKm9aJybGxs7E3ZCaCFvXfklB+NXoyisLGxsbdmr4QEeaC7cuxJgoQX92BjY2Nvyl5ZdGV8376s037GxsbGxs6PDbMXK5Pn5i0QGxsb+2R2PgxqAetjo/e+EoSNjY29KzsvN29yeUErjaptY9jY2Nh7s1eOJe0Qv40ZZm0PGxsb+xx2e9hoQ4I8DM4ryeNkbGxs7HPYyWPaF3TawPivV8DGxsbeld02rdnLNO2YqT1yRJEGNjY29tbsZEA/CxLag0oSOWNjY2Nj56P89WNAEcTGY6w2bMDGxsbem91uQR7x5q9vzg4z9deGjY2NfRg7X252LMlDiFncO2xg2NjY2B/IbuPVWRNqN+u9rQsbGxt7b3bbJNqB/qxZzkZIw/8ewMbGxv5w9qO82mNJMmDKQ4IkqIiGStjY2NgbsdvQtB0P5cFAfs9sOIWNjY19Djs/kORltceVttVFa2JjY2Nvyk6aQX7AiBrJaItnkTM2Njb2CezoF4ISZ3HsbBPzERU2Njb2mexkU9YHQ+vRb9LGsLGxsU9gtxFvUlw+eMrXbwdVb8u3sbGxsT+EPWst11swG1S1UUHR6rCxsbEPYK8Mj9qxVP6sYaw7S0WwsbGxD2Dnhea/m29H/pVgY2NjY7fstpR8zNRuZREPYGNjY2/Hzo8W7VCpLjGIFvIasLGxsU9grwe9bftZwbTHFWxsbOy92edc2NjY2NjY2NjY2Le5vgFPifeq4aCujQAAAABJRU5ErkJggg==" style="cursor: auto">
-    </ul>
-  </div>
-
-
-      
-  <div class="theme-post__share">
-    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
-      <i class="mdui-icon material-icons">&#xe80d;</i>
-    </button>
-
-    <ul class="mdui-menu" id="post-share-menu">
-
-      
-        <li class="mdui-menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html" target="_blank" class="mdui-ripple">
-                分享到Facebook
-            </a>
-        </li>
-      
-
-      
-        <li class="mdui-menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html" target="_blank" class="mdui-ripple">
-                分享到Google+
-            </a>
-        </li>
-      
-
-      
-        <li class="mdui-menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html&title=React 状态提升" target="_blank" class="mdui-ripple">
-                分享到Linkedin
-            </a>
-        </li>
-      
-
-      
-
-      
-
-      
-        <li class="mdui-menu-item">
-            <a href="https://twitter.com/intent/tweet?text=React 状态提升&url=http://yoursite.com//2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
-                分享到Twitter
-            </a>
-        </li>
-      
-
-      
-
-    </ul>
-  </div>
-
-
+<div id="side-content" class="mdui-color-yellow theme-archive__side-content">
+  <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
+    <div class="theme-archive__side-content__bg">
+      <img src="/images/random/39.png" />
     </div>
   </div>
-  <div class="theme-post__warpper
-    
-      theme-post__warpper--center
-    
-  ">
-    <div class="theme-post__warpper__container">
-      <article class="mdui-card theme-post__card mdui-hoverable">
-        <section class="theme-post__card__warning">
-          这篇文章最后修改于
-          <span id="content-warning"></span>
-          天之前。
-          本页内容可能已经过时！
-        </section>
-        
-        
-          <section class="mdui-card-media">
-            <img src="/images/random/29.png"/>
-          </section>
-        
-        <section class="mdui-typo theme-post__card__content">
-          
-        </section>
-
-        
-          <section class="theme-post__card__license mdui-typo">
-            <span>
-              本文许可协议：
-              
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
-              
-            </span>
-            <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/">http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/</a></span>
-            
-              <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/React-状态提升.md">http://yoursite.com/2020/08/17/React-%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87/React-状态提升.md</a></span>
-            
-          </section>
-        
-
-        
-          <section class="mdui-card-actions theme-post__card__actions">
-            
-              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
-                <i class="mdui-icon fa fa-beer"></i>
-              </button>
-            
-            <div class="theme-spacer"></div>
-            
-            
-          </section>
-        
-
-        
-          
-            <script type="text/javascript">
-              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
-                return
-              }
-            </script>
-          
-        
-      </article>
+  <div class="theme-archive__side-content__content">
+    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/icon.jpeg"/>
+    <div class="theme-archive__side-content__author mdui-text-center">
+      Ayden li
+    </div>
+    <div class="theme-archive__side-content__name">
+      TypeScript基础
+    </div>
+    <div class="theme-archive__side-content__length">
       
+      2篇文章
     </div>
   </div>
-
-  <div class="theme-spacer"></div>
-
-  
-
-  
-    <div class="theme-post__pagination mdui-color-theme">
-  
-    <div class="theme-spacer mdui-hidden-xs"></div>
-  
-
-  
-    <div class="theme-post__pagination__next mdui-ripple mdui-valign">
-      <a href="/2020/08/17/TypeScript-%E7%B1%BB%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
-        <div>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          TypeScript 类型
-        </div>
-      </a>
-    </div>
-    
 </div>
+<div id="contentLocation"></div>
 
-  
+  <div class="theme-posts">
+    
+      
+          
 
-  
-    <div class="mdui-dialog" id="donateDialog">
-      <div class="mdui-dialog-title">打赏</div>
-      <div class="mdui-dialog-content">
-        <div class="mdui-list">
-          
-            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+
+  <div class="theme-posts__post">
+    <article class="mdui-card mdui-hoverable">
+      <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/39.png)">
+        <img src="/images/random/39.png" class="theme-posts__post__media__image" />
+        <div class="mdui-card-media-covered theme-posts__post__media-covered">
+          <div class="mdui-card-primary mdui-typo">
+            <a href="/2020/08/20/TypeScript-%E6%8E%A5%E5%8F%A3/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
               
-                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
-              
-              
-              
-              wechat
+              TypeScript 接口
             </a>
-          
-            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
-              
-              
-              
-              paypay
-            </a>
-          
+          </div>
         </div>
-      </div>
-      <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
-      </div>
-    </div>
-  
+      </section>
+      <section class="mdui-card-content">
+        
+      </section>
+      <div class="mdui-divider" style="margin: 0 16px;"></div>
+      <section class="theme-posts__post__footer">
+        
+          
+            
+              <a href="/categories/TypeScript/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__categories">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
+                  </span>
+                  <span class="mdui-chip-title">TypeScript</span>
+                </div>
+              </a>
+            
+          
+        
+        
+          
+            
+              <a href="/tags/TypeScript%E5%9F%BA%E7%A1%80/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__tags">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
+                  </span>
+                  <span class="mdui-chip-title">TypeScript基础</span>
+                </div>
+              </a>
+            
+          
+        
+        <div class="theme-spacer"></div>
+        <div class="mdui-valign">
+          <div>
+            8月 20, 2020
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+
+
+      
+          
+
+
+  <div class="theme-posts__post">
+    <article class="mdui-card mdui-hoverable">
+      <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/37.png)">
+        <img src="/images/random/37.png" class="theme-posts__post__media__image" />
+        <div class="mdui-card-media-covered theme-posts__post__media-covered">
+          <div class="mdui-card-primary mdui-typo">
+            <a href="/2020/08/17/TypeScript-%E7%B1%BB%E5%9E%8B/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
+              
+              TypeScript 类型
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="mdui-card-content">
+        
+      </section>
+      <div class="mdui-divider" style="margin: 0 16px;"></div>
+      <section class="theme-posts__post__footer">
+        
+          
+            
+              <a href="/categories/TypeScript/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__categories">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
+                  </span>
+                  <span class="mdui-chip-title">TypeScript</span>
+                </div>
+              </a>
+            
+          
+        
+        
+          
+            
+              <a href="/tags/TypeScript%E5%9F%BA%E7%A1%80/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__tags">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
+                  </span>
+                  <span class="mdui-chip-title">TypeScript基础</span>
+                </div>
+              </a>
+            
+          
+        
+        <div class="theme-spacer"></div>
+        <div class="mdui-valign">
+          <div>
+            8月 17, 2020
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+
+
+      
+      
+        <div class="theme-end-footer">
+          <div class="mdui-text-center mdui-text-color-theme-text">
+            看起来已经没有了
+          </div>
+        </div>
+      
+  </div>
+  <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
+  <i class="mdui-icon material-icons">&#xe5d8;</i>
+</button>
+
 </div>
 <script type="text/javascript">
-  themeRuntime.scriptsMap.post = [];
-  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
-    tocHighlight()
-    function tocHighlight() {
-      var timer;
-      function doWork() {
-        listens.forEach(function(value, index) {
-          value[1]();
-          value[0].classList.remove("mdui-list-item-active");
-        })
-        let actionToc = (listens[listens.reduce(function(r, v, index) {
-          if (v[2] == true) {
-            return index;
-          } else return r;
-        }, undefined)] || [])[0] || listens[0][0];
-        actionToc.classList.add("mdui-list-item-active");
-        if(actionToc.getClientRects().length == 0)return;
-        showToc(actionToc);
-      }
-      function showToc(toc) {
-        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
-        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
-        let offset = 0;
-        if (offsetTop < 0) offset = offsetTop;
-        if (offsetBottom > 0) offset = offsetBottom;
-        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
-        clearInterval(timer);
-        timer = setInterval(function() {
-          var now = cardToc.scrollTop;
-          var speed = (targetTop - now) / 10;
-          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-          if (Math.abs(now - targetTop) < 1) {
-            clearInterval(timer);
-          }
-          cardToc.scrollTop = now + speed;
-        }, 30);
-      }
-      var listens = [];
-      var cardToc = document.querySelector('.theme-post__toc');
-      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
-      var toclist = document.querySelector(".theme-post__toc > ol");
-      Array.prototype.forEach.call(links, function(value, index) {
-        var id = (value.getAttribute("href") || "#").slice(1);
-        var element = document.getElementById(id);
-        listens.push([value, function() {
-          var readed = false;
-          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
-            readed = true;
-          } else {
-            readed = false;
-          }
-          listens[index][2] = readed;
-        }, false])
-      })
-      doWork();
-      window.addEventListener("scroll", doWork)
-      var listener = {
-        function:  doWork,
-        event: 'scroll',
-        el: window,
-        removed: false
-      }
-      themeRuntime.scriptsMap.post.push(listener)
-    }
-  }
-</script>
-
-<script type="text/javascript">
+  themeRuntime.scriptsMap.archives = [];
   (function() {
-    var postLastModifiedDate = 1597658854972
-    var today = (new Date()).getTime()
-    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
-    if (difference >= 100) {
-      document.querySelector('.theme-post__card__warning').style.display = 'block'
-      document.querySelector('#content-warning').textContent = difference
+    var fabTopFlag = false;
+    var fabEl = document.getElementById('index-fab');
+    function fabShowHide() {
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      if (bodyScrolled > 0 && !fabTopFlag) {
+        fabEl.classList.remove('mdui-fab-hide');
+        fabTopFlag = true;
+      } else if (bodyScrolled === 0 && fabTopFlag) {
+        fabEl.classList.add('mdui-fab-hide');
+        fabTopFlag = false;
+      }
     }
-  })();
-</script>
-
-<script type="text/javascript">
-  var images = document.querySelectorAll('.theme-post__card__content img')
-  for (i = 0; i < images.length; i++) {
-    //console.log('image added', i)
-    images[i].addEventListener("click", openLG);
+    fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
     var listener = {
-      function:  openLG,
-      event: 'click',
-      el: images[i],
+      function: fabShowHide,
+      event: 'scroll',
+      el: window,
       removed: false
     }
-    themeRuntime.scriptsMap.post.push(listener)
+    themeRuntime.scriptsMap.archives.push(listener)
+  })();
+
+  (function() {
+    var pageTotal = 1
+    var pageNext = 2
+    themeRuntime.temp = {
+      index: 1
+    }
+    function morePosts() {
+      var screenHeight = window.innerHeight;
+      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
+      var loadStatus = pageNext - themeRuntime.temp.index
+      if (screenHeight >= compareHeight && loadStatus === 1) {
+        if (pageNext <= pageTotal) {
+          loadProgress(false)
+          var url = window.location.href + "page/" + pageNext
+          themeRuntime.temp.index = pageNext;
+          //console.log(pageTotal, url)
+          fetch(url, {
+              method:'GET',
+              mode:'cors',
+              credentials: 'include'
+          })
+          .then(function(response) {
+            return response.text()
+          }).then(function(HTML) {
+            var fakeDom = document.createElement('html');
+            fakeDom.innerHTML = HTML
+            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
+            var postsArea = document.querySelector(".theme-posts")
+            loadProgress(true)
+            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
+            pageNext++;
+          }).catch(function(error) {
+            mdui.alert(error, "错误！");
+          })
+        }
+      }
+    }
+    window.addEventListener('scroll', morePosts);
+    var listener = {
+      function: morePosts,
+      event: 'scroll',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.archives.push(listener)
+  })();
+</script>
+<script>
+  var content_flag = false;
+  const appbar = document.querySelector('.theme-appbar')
+  const body = document.querySelector('body')
+  const title = document.querySelector('.theme-toolbar-bottom__title')
+  window.addEventListener('scroll', styleScrolled)
+  var listener = {
+    function: styleScrolled,
+    event: 'scroll',
+    el: window,
+    removed: false
   }
-  function openLG() {
-    var img_src = this.getAttribute('src');
-    var img_alt = this.getAttribute('alt');
-    lightGallery(this, {
-      dynamic: true,
-      counter: false,
-      dynamicEl: [{
-        "src": img_src,
-        'subHtml': "<span author>Ayden li</span><div descr>" + img_alt + "</div>"
-      }],
-    });
+  themeRuntime.scriptsMap.archives.push(listener)
+
+  function styleScrolled() {
+    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var divTop = document.querySelector('div#contentLocation').offsetTop
+    var contentLocation = divTop - scrollTop - 128;
+    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
+      body.classList.remove('theme-archive--style-change');
+      content_flag = true;
+    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
+      body.classList.add('theme-archive--style-change');
+      content_flag = false;
+    };
   }
 </script>
-
-
 
 
       </div>

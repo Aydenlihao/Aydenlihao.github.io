@@ -38,18 +38,19 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.2-all.zip
 
 ```
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
-``
+```
+
 以上是我的本地配置，不一定符合你们的本地配置，想看自己本地配置可以新建一个项目或者查看以前项目的配置
 
 将 APP 中的 gradle 文件的中的配置改成对应版本
 
 ```
-
 distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.2-all.zip
+```
 
-```
 改为
-```
+
+````
 
 distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 ``
@@ -72,7 +73,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
        android:text="跳转Flutter"/>
 
 </LinearLayout>
-```
+````
 
 ```java
 public class MainActivity extends AppCompatActivity {

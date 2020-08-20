@@ -1,6 +1,6 @@
 ---
-title: TypeScript 类型
-date: 2020-08-17 18:07:07
+title: TypeScript 接口
+date: 2020-08-20 14:04:51
 tags:
   - TypeScript基础
 category: TypeScript
