@@ -500,7 +500,7 @@
     
       <br />
       <span>
-        最后更新于: 8月 20, 2020
+        最后更新于: 8月 21, 2020
       </span>
     
     
@@ -550,6 +550,10 @@
       <div>
         <span>编写时间：</span>
         <span style="float: right">8月 20, 2020</span>
+        
+        <br>
+          <span>最后修改时间：</span>
+          <span>8月 21, 2020</span>
         
       </div>
       
@@ -620,8 +624,6 @@
   </div>
   <div class="theme-post__warpper
     
-      theme-post__warpper--center
-    
   ">
     <div class="theme-post__warpper__container">
       <article class="mdui-card theme-post__card mdui-hoverable">
@@ -634,11 +636,23 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/26.png"/>
+            <img src="/images/random/18.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
-          
+          <p>TypeScript 里，接口的作用就是为这些类型定义和为你的代码或第三方代码定义规范</p>
+<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><figure class="highlight typescript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printLabel</span>(<span class="params">labelledObj: &#123; label: <span class="built_in">string</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(labelledObj.label);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myObj = &#123; size: <span class="number">10</span>, label: <span class="string">"Size 10 Object"</span> &#125;;</span><br><span class="line">printLabel(myObj);</span><br></pre></td></tr></table></div></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h3><p>接口定义的可选属性，就是在属性名“：”后加“？”，属性就成了非必需的，这样定义的属性可以不进行默认传值。</p>
+<h3 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h3><p>接口定义的只读属性，只能读取该属性</p>
+<h3 id="属性检查"><a href="#属性检查" class="headerlink" title="属性检查"></a>属性检查</h3><p>即使接口中使用了可选属性，但只是意味着接口实例里可以没有这个属性，并不意味着可以多出其他属性，检查是否有不在接口定义中的属性，就是额外的属性检查。</p>
+<h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>除了描述带有属性的普通对象外，接口也可以描述函数类型。</p>
+<h3 id="可索引的类型"><a href="#可索引的类型" class="headerlink" title="可索引的类型"></a>可索引的类型</h3><p>TypeScript 支持两种索引签名：字符串和数字，可索引类型具有一个索引签名，它描述了对象索引的类型，还有相应的索引返回值类型，当你定义了 string 类型的对象索引并确定了索引返回值，其他的索引返回值就已经确定，因为当其他索引转换为 JavaScript 时都会转为 string。</p>
+<h2 id="类类型"><a href="#类类型" class="headerlink" title="类类型"></a>类类型</h2><p>子类限时父接口时，可以显示父接口的方法。<br>当一个类实现了一个接口时，只对其实例部分进行类型检查，构造函数属于静态部分，不进行属性检查</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>接口可以多继承接口，当接口继承父接口时，子接口就具备父接口的属性或方法</p>
+<h2 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h2><p>使用混合可以使一个对象拥有多种使用方式，可以作为函数使用也可以作为对象使用</p>
+<h2 id="继承类"><a href="#继承类" class="headerlink" title="继承类"></a>继承类</h2><p>当接口继承了一个类类型时，它会继承类的成员但不包括其实现，接口同样会继承到类的 private 和 protected 成员。</p>
+
         </section>
 
         
@@ -704,10 +718,24 @@
         
       </article>
       
+        <div class="mdui-color-theme theme-post__toc">
+          <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x57FA;&#x7840;&#x4F7F;&#x7528;" data-href="#&#x57FA;&#x7840;&#x4F7F;&#x7528;"><span class="toc-number"></span> <span class="toc-text">1. &#x57FA;&#x7840;&#x4F7F;&#x7528;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C5E;&#x6027;" data-href="#&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2. &#x5C5E;&#x6027;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EF;&#x9009;&#x5C5E;&#x6027;" data-href="#&#x53EF;&#x9009;&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2.1. &#x53EF;&#x9009;&#x5C5E;&#x6027;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EA;&#x8BFB;&#x5C5E;&#x6027;" data-href="#&#x53EA;&#x8BFB;&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2.2. &#x53EA;&#x8BFB;&#x5C5E;&#x6027;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C5E;&#x6027;&#x68C0;&#x67E5;" data-href="#&#x5C5E;&#x6027;&#x68C0;&#x67E5;"><span class="toc-number"></span> <span class="toc-text">2.3. &#x5C5E;&#x6027;&#x68C0;&#x67E5;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x51FD;&#x6570;&#x7C7B;&#x578B;" data-href="#&#x51FD;&#x6570;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">3. &#x51FD;&#x6570;&#x7C7B;&#x578B;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;" data-href="#&#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">3.1. &#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7C7B;&#x7C7B;&#x578B;" data-href="#&#x7C7B;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">4. &#x7C7B;&#x7C7B;&#x578B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7EE7;&#x627F;" data-href="#&#x7EE7;&#x627F;"><span class="toc-number"></span> <span class="toc-text">5. &#x7EE7;&#x627F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x6DF7;&#x5408;" data-href="#&#x6DF7;&#x5408;"><span class="toc-number"></span> <span class="toc-text">6. &#x6DF7;&#x5408;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7EE7;&#x627F;&#x7C7B;" data-href="#&#x7EE7;&#x627F;&#x7C7B;"><span class="toc-number"></span> <span class="toc-text">7. &#x7EE7;&#x627F;&#x7C7B;</span></a></li></ol></body></html>
+        </div>
+      
     </div>
   </div>
 
   <div class="theme-spacer"></div>
+
+  
+    <div class="mdui-color-theme theme-post__toc-fab">
+  <button class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" mdui-menu="{target: '#toc-fab-menu', fixed: true}" id="toc-fab">
+    <i class="mdui-icon material-icons">&#xe242;</i>
+  </button>
+  <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
+    <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x57FA;&#x7840;&#x4F7F;&#x7528;" data-href="#&#x57FA;&#x7840;&#x4F7F;&#x7528;"><span class="toc-number"></span> <span class="toc-text">1. &#x57FA;&#x7840;&#x4F7F;&#x7528;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C5E;&#x6027;" data-href="#&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2. &#x5C5E;&#x6027;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EF;&#x9009;&#x5C5E;&#x6027;" data-href="#&#x53EF;&#x9009;&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2.1. &#x53EF;&#x9009;&#x5C5E;&#x6027;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EA;&#x8BFB;&#x5C5E;&#x6027;" data-href="#&#x53EA;&#x8BFB;&#x5C5E;&#x6027;"><span class="toc-number"></span> <span class="toc-text">2.2. &#x53EA;&#x8BFB;&#x5C5E;&#x6027;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C5E;&#x6027;&#x68C0;&#x67E5;" data-href="#&#x5C5E;&#x6027;&#x68C0;&#x67E5;"><span class="toc-number"></span> <span class="toc-text">2.3. &#x5C5E;&#x6027;&#x68C0;&#x67E5;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x51FD;&#x6570;&#x7C7B;&#x578B;" data-href="#&#x51FD;&#x6570;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">3. &#x51FD;&#x6570;&#x7C7B;&#x578B;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;" data-href="#&#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">3.1. &#x53EF;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7C7B;&#x7C7B;&#x578B;" data-href="#&#x7C7B;&#x7C7B;&#x578B;"><span class="toc-number"></span> <span class="toc-text">4. &#x7C7B;&#x7C7B;&#x578B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7EE7;&#x627F;" data-href="#&#x7EE7;&#x627F;"><span class="toc-number"></span> <span class="toc-text">5. &#x7EE7;&#x627F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x6DF7;&#x5408;" data-href="#&#x6DF7;&#x5408;"><span class="toc-number"></span> <span class="toc-text">6. &#x6DF7;&#x5408;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x7EE7;&#x627F;&#x7C7B;" data-href="#&#x7EE7;&#x627F;&#x7C7B;"><span class="toc-number"></span> <span class="toc-text">7. &#x7EE7;&#x627F;&#x7C7B;</span></a></li></ol></body></html>
+  </ul>
+</div>
 
   
 
@@ -837,7 +865,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1597903528023
+    var postLastModifiedDate = 1598003543240
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
