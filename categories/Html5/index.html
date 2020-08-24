@@ -16,7 +16,7 @@
         status: false
       },
       versions: {
-        theme: "2.1.0",
+        theme: "2.0.3",
         mdui: "0.4.0",
         fetch: "3.0.0",
         es6promise: "4.2.5+7f2b526d",
@@ -229,11 +229,6 @@
         </i>
       </a>
     
-    <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__mode-switch">
-      <i class="mdui-icon material-icons  theme-appbar__bright-mode">&#xe1ac;</i>
-      <i class="mdui-icon material-icons  theme-appbar__dark-mode" style="display: none;">&#xe3a7;</i>
-    </a>
   </div>
   <div class="mdui-toolbar theme-toolbar-bottom">
     <span class="theme-toolbar-bottom__title">豪不无趣</span>
@@ -266,7 +261,7 @@
     </div>
   </div>
   <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png"/>
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/icon.jpeg"/>
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         Ayden li
@@ -503,7 +498,7 @@
     
       <br />
       <span>
-        最后更新于: 8月 23, 2020
+        最后更新于: 8月 24, 2020
       </span>
     
     
@@ -530,14 +525,14 @@
       <div class="barba-container"  data-namespace="archives">
         <div class="theme-archive">
   
-<div id="side-content" class="mdui-color-light-blue theme-archive__side-content">
+<div id="side-content" class="mdui-color-blue-grey theme-archive__side-content">
   <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
     <div class="theme-archive__side-content__bg">
-      <img src="/images/random/12.png" />
+      <img src="/images/random/20.png" />
     </div>
   </div>
   <div class="theme-archive__side-content__content">
-    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/avatar.png"/>
+    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/icon.jpeg"/>
     <div class="theme-archive__side-content__author mdui-text-center">
       Ayden li
     </div>
@@ -560,19 +555,16 @@
 
   <div class="theme-posts__post">
     <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/5.png)">
-        
+      <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/21.png)">
+        <img src="/images/random/21.png" class="theme-posts__post__media__image" />
         <div class="mdui-card-media-covered theme-posts__post__media-covered">
           <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/04/23/BFC-Block-Fommatting-context/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+            <a href="/2020/04/23/BFC-Block-Fommatting-context/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
               
-                BFC(Block Fommatting context)
+              BFC(Block Fommatting context)
             </a>
           </div>
         </div>
-        
       </section>
       <section class="mdui-card-content">
         什...
@@ -779,47 +771,6 @@
     }
     appbarShadow()
     window.addEventListener('scroll', appbarShadow);
-  })();
-  (function() {
-    function detechTheme() {
-      var modeFlag = localStorage.getItem('darkMode');
-      // true for dark mode, false for bright mode
-      if(modeFlag === "true"){
-        document.querySelector('body').classList.add('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-        return true
-      } else if(!window.matchMedia) {
-          return false;
-      } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.querySelector('body').classList.add('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-          return true;
-      } else if(window.matchMedia("(prefers-color-scheme: light)").matches) {
-        document.querySelector('body').classList.remove('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
-          return false;
-      } else {
-        return false;
-      }
-    }
-    var modeFlag = detechTheme();
-    var modeEl = document.querySelector('.theme-appbar__mode-switch');
-    function modeSwitch() {
-      if (!modeFlag) {
-        // default bright mode, switch to dark mode
-        document.querySelector('body').classList.add('mdui-theme-layout-dark');
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-        localStorage.setItem('darkMode', true);
-        modeFlag = true;
-      } else {
-        // dark mode, switch to bright mode
-        document.querySelector('body').classList.remove('mdui-theme-layout-dark');
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
-        localStorage.setItem('darkMode', false);
-        modeFlag = false;
-      }
-    }
-    modeEl.addEventListener('click', modeSwitch);
   })();
 </script>
 
