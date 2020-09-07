@@ -311,7 +311,7 @@
               <a href="/categories/JavaScript/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 JavaScript
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">5</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">6</span>
               </a>
             
               <a href="/categories/css/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
@@ -335,7 +335,7 @@
               <a href="/categories/TypeScript/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 TypeScript
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">3</span>
               </a>
             
           </div>
@@ -383,13 +383,13 @@
               <a href="/tags/React/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 React
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
               </a>
             
               <a href="/tags/TypeScript%E5%9F%BA%E7%A1%80/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 TypeScript基础
                 <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">2</span>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption="">3</span>
               </a>
             
           </div>
@@ -505,7 +505,7 @@
     
       <br />
       <span>
-        最后更新于: 8月 24, 2020
+        最后更新于: 9月 07, 2020
       </span>
     
     
@@ -555,6 +555,10 @@
       <div>
         <span>编写时间：</span>
         <span style="float: right">8月 20, 2020</span>
+        
+        <br>
+          <span>最后修改时间：</span>
+          <span>8月 26, 2020</span>
         
       </div>
       
@@ -639,11 +643,18 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/21.png"/>
+            <img src="/images/random/18.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
-          
+          <p>有些组件无法提前知晓它们子组件的具体内容，所以我们建议这些组件使用一个特殊的 children prop 来将他们的子组件传递到渲染结果中：</p>
+<figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FancyBorder</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=&#123;<span class="string">'FancyBorder FancyBorder-'</span> + props.color&#125;&gt;</span><br><span class="line">      &#123;props.children&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>使得使用组件时，可以将任意组件作为子组件传递给它们。</p>
+<figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dialog</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;FancyBorder color=<span class="string">"blue"</span>&gt;</span><br><span class="line">      &lt;h1 className=<span class="string">"Dialog-title"</span>&gt;</span><br><span class="line">        &#123;props.title&#125;</span><br><span class="line">      &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p className="Dialog-message"&gt;</span></span><br><span class="line"><span class="regexp">        &#123;props.message&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>p&gt;</span><br><span class="line">      &#123;props.children&#125;</span><br><span class="line">    &lt;<span class="regexp">/FancyBorder&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class SignUpDialog extends React.Component &#123;</span></span><br><span class="line"><span class="regexp">  constructor(props) &#123;</span></span><br><span class="line"><span class="regexp">    super(props);</span></span><br><span class="line"><span class="regexp">    this.handleChange = this.handleChange.bind(this);</span></span><br><span class="line"><span class="regexp">    this.handleSignUp = this.handleSignUp.bind(this);</span></span><br><span class="line"><span class="regexp">    this.state = &#123;login: ''&#125;;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;Dialog title="Mars Exploration Program"</span></span><br><span class="line"><span class="regexp">              message="How should we refer to you?"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;input value=&#123;this.state.login&#125;</span></span><br><span class="line"><span class="regexp">               onChange=&#123;this.handleChange&#125; /</span>&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.handleSignUp&#125;&gt;</span><br><span class="line">          Sign Me Up!</span><br><span class="line">        &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Dialog&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(e) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">login</span>: e.target.value&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSignUp() &#123;</span><br><span class="line">    alert(<span class="string">`Welcome aboard, <span class="subst">$&#123;<span class="keyword">this</span>.state.login&#125;</span>!`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>使用这种组件的方法，类似于我们 slot 的使用，在父组件中嵌入子组件，父组件中就可以通过 prop children 获取子组件的内容。不过如果子组件要进行操作，不需要通过父组件调用函数，组件在嵌入的地方调用指定函数。</p>
+
         </section>
 
         
@@ -856,7 +867,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1597903459795
+    var postLastModifiedDate = 1598430243102
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {

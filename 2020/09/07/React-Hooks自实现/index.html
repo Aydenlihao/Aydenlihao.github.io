@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>标签: React - 豪不无趣</title>
+  <title>React Hooks自实现 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,React">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,10 +63,12 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="标签: React - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="React Hooks自实现 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
+  
+    <meta property="og:article:tag" content="React">
   
 
   
@@ -340,7 +342,7 @@
         </div>
       
       
-        <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content">标签</div>
@@ -527,275 +529,359 @@
 
 
     <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="archives">
-        <div class="theme-archive">
+      <div class="barba-container"  data-namespace="post">
+        
+
+
+
   
-<div id="side-content" class="mdui-color-indigo theme-archive__side-content">
-  <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
-    <div class="theme-archive__side-content__bg">
-      <img src="/images/random/3.png" />
-    </div>
-  </div>
-  <div class="theme-archive__side-content__content">
-    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/avatar.png"/>
-    <div class="theme-archive__side-content__author mdui-text-center">
-      Ayden li
-    </div>
-    <div class="theme-archive__side-content__name">
-      React
-    </div>
-    <div class="theme-archive__side-content__length">
-      
-      2篇文章
-    </div>
-  </div>
-</div>
-<div id="contentLocation"></div>
+<link rel="stylesheet" href="/css/prism/darcula.min.css">
 
-  <div class="theme-posts">
+
+
+  
+<link rel="stylesheet" href="/css/prism/line-number.min.css">
+
+
+
+<div class="theme-post">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header mdui-color-theme">
+    <div class="theme-post__header__title mdui-text-truncate">
+      React Hooks自实现
+    </div>
+    <div class="theme-spacer"></div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span>编写时间：</span>
+        <span style="float: right">9月 07, 2020</span>
+        
+      </div>
+      
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        文章二维码
+      </li>
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC5klEQVR42u3aSXLDMAwEQP//08k1F7lmQLlika1TqqIFzQuM5fVz5PXCxsbGxsbGxsbG/kr2K77+3l987O2zyduunspjxsbGxj6B3X74KojkPUmI7fFFh4WNjY19ALtNWlf3XL0hSY1JkpvFjI2NjY39/p6VVJcfEzY2Njb2XexZ0O8T4SylYWNjY2OvNHTa0iIKbnT0H++lYWNjY389ezbo/d+//22+jY2Njf1l7PZaWbJJjns2Qo4ix8bGxt6UnQ9x22Ftfk9OLdLVrALDxsbGfix71r5JjixvVK0MFaIjw8bGxt6UPWvNz1r/s4TUjpbrCgwbGxv74ez8p3x7f9s2mq3sJOUNNjY29t7sWdDtMPiu1n97iNjY2NjnsNdHvG1LKH+2HSfUTSVsbGzsh7PbZNA262dfyf/7kQoMGxsb+7Hstn0zAxej2aTpn4+lsbGxsbdmz1ZnVtpM74+1bXVF0WJjY2Nvyh7+rI/b+jkyf3a2KoSNjY19Djv/iZ+XJbNRcXv0RSmCjY2NvRH7LlIbUJJ48oHxcDyAjY2NvQV71tCfpcDZm9uR8DBvY2NjYz+W3ZYBOSBp3LdP5eVHNBXBxsbG3oLdjgryFNI28du0lESFjY2NfQI7H9nmIbarNve+ExsbG/s0djsSmB3BjNS+v16+xMbGxt6CnZPyhZvkQGdjidlqETY2Nvbe7Da4vICZJcLZyPnmUgQbGxv7seyV0JOBcbvKmQ+hh8uX2NjY2Fuw1xdl8mIgD7EdOUfDBmxsbOxN2bMRb7twk6e3nHFbUwkbGxv74ezZ5/Mh7qxQydNkcUDY2NjYW7Pz1lKe0vKioh0zJ4XN0soONjY29mPZySvatcg8WeaJqn0WGxsbG7td2VlJV3cdFjY2NjZ2m6jyVZ5ZS6sdJxdNJWxsbOyN2HlTKU9geVGRp6I8sWFjY2Ofw54ljySsfOEmP752VICNjY29N/ucCxsbGxsbGxsbG/trrl/ce3vui+9KUgAAAABJRU5ErkJggg==" style="cursor: auto">
+    </ul>
+  </div>
+
+
+      
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html" target="_blank" class="mdui-ripple">
+                分享到Facebook
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html" target="_blank" class="mdui-ripple">
+                分享到Google+
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html&title=React Hooks自实现" target="_blank" class="mdui-ripple">
+                分享到Linkedin
+            </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=React Hooks自实现&url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+                分享到Twitter
+            </a>
+        </li>
+      
+
+      
+
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+  <div class="theme-post__warpper
     
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/36.png)">
+      theme-post__warpper--center
+    
+  ">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card mdui-hoverable">
+        <section class="theme-post__card__warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </section>
         
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+        
+          <section class="mdui-card-media">
+            <img src="/images/random/29.png"/>
+          </section>
+        
+        <section class="mdui-typo theme-post__card__content">
+          
+        </section>
+
+        
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              本文许可协议：
               
-                React Hooks自实现
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/React/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">React</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            9月 07, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/4.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/08/20/React-%E7%BB%84%E5%90%88vs%E7%BB%A7%E6%89%BF/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
               
-                React 组合vs继承
+            </span>
+            <br />
+            <span>本文永久链接：<a href="http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/">http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/</a></span>
+            
+              <br />
+              <span>本文Markdown：<a href="http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/React-Hooks自实现.md">http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/React-Hooks自实现.md</a></span>
+            
+          </section>
+        
+
+        
+          <section class="mdui-card-actions theme-post__card__actions">
+            
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            
+            <div class="theme-spacer"></div>
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/categories/JavaScript/">
+                    <span>JavaScript</span>
+                  </a>
+                
+              </div>
+            
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/tags/React/">
+                    <span>React</span>
+                  </a>
+                
+              </div>
+            
+          </section>
+        
+
+        
+          
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
+          
+        
+      </article>
+      
+    </div>
+  </div>
+
+  <div class="theme-spacer"></div>
+
+  
+
+  
+    <div class="theme-post__pagination mdui-color-theme">
+  
+    <div class="theme-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="theme-post__pagination__next mdui-ripple mdui-valign">
+      
+        <a href="/2020/09/07/TypeScript-%E6%B3%9B%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
+        
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          TypeScript 泛型
+        </div>
+      </a>
+    </div>
+    
+</div>
+
+  
+
+  
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title">打赏</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          
+            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
+              
+              
+              
+              wechat
             </a>
-          </div>
+          
+            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
+              
+              
+              
+              paypay
+            </a>
+          
         </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        有些组件无法提前知晓它们子组件的具体内容，所以我们建议这些组件使用一个特殊的 children prop 来将他们的子组件传递到渲染结果中：...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/React/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">React</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            8月 20, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-      
-        <div class="theme-end-footer">
-          <div class="mdui-text-center mdui-text-color-theme-text">
-            看起来已经没有了
-          </div>
-        </div>
-      
-  </div>
-  <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
-
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
+      </div>
+    </div>
+  
 </div>
 <script type="text/javascript">
-  themeRuntime.scriptsMap.archives = [];
-  (function() {
-    var fabTopFlag = false;
-    var fabEl = document.getElementById('index-fab');
-    function fabShowHide() {
-      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (bodyScrolled > 0 && !fabTopFlag) {
-        fabEl.classList.remove('mdui-fab-hide');
-        fabTopFlag = true;
-      } else if (bodyScrolled === 0 && fabTopFlag) {
-        fabEl.classList.add('mdui-fab-hide');
-        fabTopFlag = false;
+  themeRuntime.scriptsMap.post = [];
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
+    tocHighlight()
+    function tocHighlight() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
       }
-    }
-    fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-
-  (function() {
-    var pageTotal = 1
-    var pageNext = 2
-    themeRuntime.temp = {
-      index: 1
-    }
-    function morePosts() {
-      var screenHeight = window.innerHeight;
-      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
-      var loadStatus = pageNext - themeRuntime.temp.index
-      if (screenHeight >= compareHeight && loadStatus === 1) {
-        if (pageNext <= pageTotal) {
-          loadProgress(false)
-          var url = window.location.href + "page/" + pageNext
-          themeRuntime.temp.index = pageNext;
-          //console.log(pageTotal, url)
-          fetch(url, {
-              method:'GET',
-              mode:'cors',
-              credentials: 'include'
-          })
-          .then(function(response) {
-            return response.text()
-          }).then(function(HTML) {
-            var fakeDom = document.createElement('html');
-            fakeDom.innerHTML = HTML
-            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
-            var postsArea = document.querySelector(".theme-posts")
-            loadProgress(true)
-            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
-            pageNext++;
-          }).catch(function(error) {
-            mdui.alert(error, "错误！");
-          })
-        }
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
       }
+      var listens = [];
+      var cardToc = document.querySelector('.theme-post__toc');
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
     }
-    window.addEventListener('scroll', morePosts);
-    var listener = {
-      function: morePosts,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-</script>
-<script>
-  var content_flag = false;
-  const appbar = document.querySelector('.theme-appbar')
-  const body = document.querySelector('body')
-  const title = document.querySelector('.theme-toolbar-bottom__title')
-  window.addEventListener('scroll', styleScrolled)
-  var listener = {
-    function: styleScrolled,
-    event: 'scroll',
-    el: window,
-    removed: false
-  }
-  themeRuntime.scriptsMap.archives.push(listener)
-
-  function styleScrolled() {
-    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var divTop = document.querySelector('div#contentLocation').offsetTop
-    var contentLocation = divTop - scrollTop - 128;
-    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      body.classList.remove('theme-archive--style-change');
-      content_flag = true;
-    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      body.classList.add('theme-archive--style-change');
-      content_flag = false;
-    };
   }
 </script>
+
+<script type="text/javascript">
+  (function() {
+    var postLastModifiedDate = 1599447553252
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('.theme-post__card__warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+  var images = document.querySelectorAll('.theme-post__card__content img')
+  for (i = 0; i < images.length; i++) {
+    //console.log('image added', i)
+    images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>Ayden li</span><div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+
 
 
       </div>

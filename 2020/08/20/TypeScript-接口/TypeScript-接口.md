@@ -23,7 +23,7 @@ printLabel(myObj);
 
 ### 可选属性
 
-接口定义的可选属性，就是在属性名“：”后加“？”，属性就成了非必需的，这样定义的属性可以不进行默认传值。
+接口定义的可选属性，就是在属性名“：”前加“？”，属性就成了非必需的，这样定义的属性可以不进行默认传值。
 
 ```TypeScript
 interface SquareConfig {
@@ -91,6 +91,17 @@ mySearch = function(source: string, subString: string) {
 
 ### 可索引的类型
 
+```TypeScript
+interface StringArray {
+  [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+
+let myStr: string = myArray[0];
+```
+
 TypeScript 支持两种索引签名：字符串和数字，可索引类型具有一个索引签名，它描述了对象索引的类型，还有相应的索引返回值类型，当你定义了 string 类型的对象索引并确定了索引返回值，其他的索引返回值就已经确定，因为当其他索引转换为 JavaScript 时都会转为 string。
 
 ```TypeScript
@@ -120,6 +131,30 @@ interface NotOkay {
 
 子类限时父接口时，可以显示父接口的方法。
 当一个类实现了一个接口时，只对其实例部分进行类型检查，构造函数属于静态部分，不进行属性检查
+
+```typeScript
+interface ClockInterface {
+    currentTime: Date;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+```
+
+当用构造器签名去定义一个接口并试图定义一个类去实现这个接口时会得到一个错误
+
+```typeScript
+interface ClockConstructor {
+    new (hour: number, minute: number);
+}
+
+class Clock implements ClockConstructor {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+```
 
 ## 继承
 
@@ -165,6 +200,26 @@ square.penWidth = 5.0;
 
 使用混合可以使一个对象拥有多种使用方式，可以作为函数使用也可以作为对象使用
 
+```typeScript
+interface Counter {
+    (start: number): string;
+    interval: number;
+    reset(): void;
+}
+
+function getCounter(): Counter {
+    let counter = <Counter>function (start: number) { };
+    counter.interval = 123;
+    counter.reset = function () { };
+    return counter;
+}
+
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;
+```
+
 ## 继承类
 
 当接口继承了一个类类型时，它会继承类的成员但不包括其实现，接口同样会继承到类的 private 和 protected 成员。
@@ -189,9 +244,5 @@ class TextBox extends Control {
 // 错误：“Image”类型缺少“state”属性。
 class Image implements SelectableControl {
     select() { }
-}
-
-class Location {
-
 }
 ```
