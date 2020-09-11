@@ -70,22 +70,9 @@ loggingIdentity(3);
 loggingIdentity({length: 10, value: 3});
 ```
 
-### 在泛型约束中使用类型参数
-
-当我们想象获取对象里的某个属性值时，而又想泛型变量限制于相对应的对象就可以将对象作为另一个泛型变量传递，但在使用时要确保这个属性存在于相对应的对象中
-
-```Typescript
-function getProperty(obj: T, key: K) {
-    return obj[key];
-}
-
-let x = { a: 1, b: 2, c: 3, d: 4 };
-
-getProperty(x, "a"); // okay
-getProperty(x, "m"); // error: Argument of type 'm' isn't assignable to 'a' | 'b' | 'c' | 'd'.
-```
-
 ### 在泛型里使用类类型
+
+使用原型属性推断并约束构造函数与类实例的关系
 
 ```typescript
 class BeeKeeper {
