@@ -49,7 +49,7 @@ o.run()        // Uncaught TypeError: o.run is not a function
 // 2) new关键字后接基本类型
 var p = new 456      // Uncaught TypeError: 456 is not a constructor
 ```
-## RangError（范围错误）
+## RangeError（范围错误）
 我的理解:你那玩意过界了
 ```javascript
 // RangeError: 范围错误(参数超范围)
