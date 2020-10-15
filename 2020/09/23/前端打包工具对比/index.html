@@ -16,7 +16,7 @@
         status: false
       },
       versions: {
-        theme: "2.1.0",
+        theme: "2.0.3",
         mdui: "0.4.0",
         fetch: "3.0.0",
         es6promise: "4.2.5+7f2b526d",
@@ -231,11 +231,6 @@
         </i>
       </a>
     
-    <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__mode-switch">
-      <i class="mdui-icon material-icons  theme-appbar__bright-mode">&#xe1ac;</i>
-      <i class="mdui-icon material-icons  theme-appbar__dark-mode" style="display: none;">&#xe3a7;</i>
-    </a>
   </div>
   <div class="mdui-toolbar theme-toolbar-bottom">
     <span class="theme-toolbar-bottom__title">豪不无趣</span>
@@ -268,13 +263,13 @@
     </div>
   </div>
   <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png"/>
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/icon.jpeg"/>
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         Ayden li
       </div>
       <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
-        With great power comes great responsibility.!
+        I&#39;m your slogan!
       </div>
     </div>
   </div>
@@ -665,7 +660,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/14.png"/>
+            <img src="/images/random/1.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -790,9 +785,7 @@
     <div class="theme-post__pagination mdui-color-theme">
   
     <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
-      
-        <a href="/2020/10/15/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6/" class="theme-post__pagination__prev__content mdui-text-left">
-        
+      <a href="/2020/10/15/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6/" class="theme-post__pagination__prev__content mdui-text-left">
         <div>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
           <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
@@ -806,9 +799,7 @@
 
   
     <div class="theme-post__pagination__next mdui-ripple mdui-valign">
-      
-        <a href="/2020/09/21/JavaScript-%E6%8A%A5%E9%94%99%E7%B1%BB%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
-        
+      <a href="/2020/09/21/JavaScript-%E6%8A%A5%E9%94%99%E7%B1%BB%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
@@ -1011,47 +1002,6 @@
     }
     appbarShadow()
     window.addEventListener('scroll', appbarShadow);
-  })();
-  (function() {
-    function detechTheme() {
-      var modeFlag = localStorage.getItem('darkMode');
-      // true for dark mode, false for bright mode
-      if(modeFlag === "true"){
-        document.querySelector('body').classList.add('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-        return true
-      } else if(!window.matchMedia) {
-          return false;
-      } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.querySelector('body').classList.add('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-          return true;
-      } else if(window.matchMedia("(prefers-color-scheme: light)").matches) {
-        document.querySelector('body').classList.remove('mdui-theme-layout-dark')
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
-          return false;
-      } else {
-        return false;
-      }
-    }
-    var modeFlag = detechTheme();
-    var modeEl = document.querySelector('.theme-appbar__mode-switch');
-    function modeSwitch() {
-      if (!modeFlag) {
-        // default bright mode, switch to dark mode
-        document.querySelector('body').classList.add('mdui-theme-layout-dark');
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
-        localStorage.setItem('darkMode', true);
-        modeFlag = true;
-      } else {
-        // dark mode, switch to bright mode
-        document.querySelector('body').classList.remove('mdui-theme-layout-dark');
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
-        localStorage.setItem('darkMode', false);
-        modeFlag = false;
-      }
-    }
-    modeEl.addEventListener('click', modeSwitch);
   })();
 </script>
 
