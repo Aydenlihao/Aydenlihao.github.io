@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>标签: React - 豪不无趣</title>
+  <title>行内元素margin、padding无效原因 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,HTML5">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,10 +63,12 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="标签: React - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="行内元素margin、padding无效原因 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
+  
+    <meta property="og:article:tag" content="HTML5">
   
 
   
@@ -352,7 +354,7 @@
         </div>
       
       
-        <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content">标签</div>
@@ -551,275 +553,368 @@
 
 
     <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="archives">
-        <div class="theme-archive">
+      <div class="barba-container"  data-namespace="post">
+        
+
+
+
   
-<div id="side-content" class="mdui-color-yellow theme-archive__side-content">
-  <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
-    <div class="theme-archive__side-content__bg">
-      <img src="/images/random/33.png" />
-    </div>
-  </div>
-  <div class="theme-archive__side-content__content">
-    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/icon.jpeg"/>
-    <div class="theme-archive__side-content__author mdui-text-center">
-      Ayden li
-    </div>
-    <div class="theme-archive__side-content__name">
-      React
-    </div>
-    <div class="theme-archive__side-content__length">
-      
-      2篇文章
-    </div>
-  </div>
-</div>
-<div id="contentLocation"></div>
+<link rel="stylesheet" href="/css/prism/darcula.min.css">
 
-  <div class="theme-posts">
+
+
+  
+<link rel="stylesheet" href="/css/prism/line-number.min.css">
+
+
+
+<div class="theme-post">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header mdui-color-theme">
+    <div class="theme-post__header__title mdui-text-truncate">
+      行内元素margin、padding无效原因
+    </div>
+    <div class="theme-spacer"></div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span>编写时间：</span>
+        <span style="float: right">10月 30, 2020</span>
+        
+      </div>
+      
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        文章二维码
+      </li>
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAE4klEQVR42u3aUW7bMBAEUN3/0u0BAsszu1QSI09fRa1I5KMBL2d5/XMtrgsBPnz48Lnw4cOHz4UP34fwXfGV3P/1yffvevXpmwnc3nP/nHwuL8eJDx8+fPjwrfny4baTT56fE3wdST6qV1+Fdqnw4cOHDx++U3z5a5IiY/+09i3Je5MFeDNafPjw4cOH7xv58kIkLz6SbXweRiRY+PDhw4cP36fwbeL1vGjIFzKP5tvgHh8+fPjw4XuarwisFxH8rKW9IZvh4sOHDx8+fM/xbUqHT//3D5zvw4cPHz58f5jvbPExi9dPFRZ5NL8SwIcPHz58+BZ8bdN6NoFZazxZmDwsyBf1TZsfHz58+PDhW/DlxUSxqV40rc823Tetgiisx4cPHz58+BZ93hYr/zS/Py842oWchR1RZIAPHz58+PCt+dotd/tpQpw3D+4Xo73/TSmDDx8+fPjwPcyXP7oeSrCNn23+Z415fPjw4cOH7zv58i307ChY24bfHzLLy5piDPjw4cOHD9+aL3lZG8fP2uGzI27JjPL5vvkS4MOHDx8+fAu+pNRoN96nGuqzVndb0KwKF3z48OHDh2+x590/erMwbZBRHCkbhSAvZ40PHz58+PCt+WYt5GTLnZc4swNtbbi/iTPw4cOHDx++U3w50KZ9nm/m87A+GWEyx7wlgA8fPnz48J3ly2OCTQTfFjGbQ2xtYfRmgfHhw4cPH74H+NoBzYqettE+K0T2bXh8+PDhw4fvFF/bCE+i+VlzPfnb9tPZEbqicMGHDx8+fPhGe97ZgbBZWbB5Y9tc378dHz58+PDhO8s3KxryDX8yvdmBs1lrvC2bisgAHz58+PDhK/k20fa1vpKFTLb0bTuhXnJ8+PDhw4dvwTf7gc+n3W7728KlpWwLMnz48OHDh+8s36zsSOhn4ULbJGjjj9m88OHDhw8fvrN8s4Lj/jlnC5G2mb2fVxHW48OHDx8+fDHfbHvfljJJWXP/t20onxcu9ZcDHz58+PDhW/DlDen9z/9+qmfj+1ljHh8+fPjw4TvFl8fubZu8LUeeGFs+wjpxwYcPHz58+A6F9Xlxk2/vN6XDrN2+/0Lgw4cPHz58z/El2/VZ2J0XOrMYPWkYtItUFy748OHDhw9fGdbnbe82ZG+nkQNtSqX2Lfjw4cOHD9+Gb7Mhz/+qDfGjg2LrCCMpwvDhw4cPH77n+PIW8qaAOPv2s0flovY5Pnz48OHDt+Zrj5rl0fmsNGlji1kDYFhg4cOHDx8+fAu+WWh+lrKdUk68aRsM2+T48OHDhw9fzLeJ6fNSIz/G/cTStstWnDLAhw8fPnz4Sr5ZRH42KG+fkDxnVqINIwN8+PDhw4cvDuvz8mX4kx+3BPIYYlb0zN6FDx8+fPjw7fnaqy078hIh+f+2KGk/jd6CDx8+fPjwLfiu+ErC7rMobSgwCzJWbXJ8+PDhw4dvxJdDJINrC4hNVDEbZ77YUeKCDx8+fPjwjfg2W/3ZQNuCqS1ZrvLChw8fPnz4fhtfe09SjuyLkpaybf/jw4cPHz58P8uXh++nYvfZsbO8kZC8BR8+fPjw4TvLN2t4D3/+g5Z2cv8s6J+FHfjw4cOHD98pvllo3kbqeSnTlkeblkNNjw8fPnz48C34XO2FDx8+fPhc+PDhw+fCh+8XX/8BHaO2pDvhbjgAAAAASUVORK5CYII=" style="cursor: auto">
+    </ul>
+  </div>
+
+
+      
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/index.html" target="_blank" class="mdui-ripple">
+                分享到Facebook
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/index.html" target="_blank" class="mdui-ripple">
+                分享到Google+
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/index.html&title=行内元素margin、padding无效原因" target="_blank" class="mdui-ripple">
+                分享到Linkedin
+            </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=行内元素margin、padding无效原因&url=http://yoursite.com//2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+                分享到Twitter
+            </a>
+        </li>
+      
+
+      
+
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+  <div class="theme-post__warpper
     
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/18.png)">
+      theme-post__warpper--center
+    
+  ">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card mdui-hoverable">
+        <section class="theme-post__card__warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </section>
         
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+        
+          <section class="mdui-card-media">
+            <img src="/images/random/32.png"/>
+          </section>
+        
+        <section class="mdui-typo theme-post__card__content">
+          <p>行内元素：可以一行存在多个标签，对宽高属性值不生效，完全靠内容撑开宽高！<br>经过验证后，发现 top/bottom(padding-top/padding-bottom)、top/bottom(margin-top/margin-bottom)这 4 个属性是可以设置的</p>
+<figure class="highlight html"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"inline-element"</span></span></span><br><span class="line"><span class="tag">        &gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>天津<span class="tag">&lt;/<span class="name">a</span></span></span><br><span class="line"><span class="tag">        &gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>辽宁<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>吉林<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>黑龙江<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    * &#123;</span><br><span class="line">      padding: 0;</span><br><span class="line">      margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-tag">div</span><span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line">      width: 200px;</span><br><span class="line">      height: 200px;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      margin: 10px;</span><br><span class="line">      word-wrap: break-word;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.inline-element</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line">      margin: 20px 20px 0 0;</span><br><span class="line">      padding: 5px 5px 0 0;</span><br><span class="line">      height: 20px;</span><br><span class="line">      line-height: 20px;</span><br><span class="line"><span class="css">      <span class="selector-tag">background</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>查 w3c 的官方文档并没有找到这个奇葩现象解释（可能我英语比较烂，没找到），后来在一篇老外的文章里找到了答案：</p>
+<blockquote>
+<p>While padding can be applied to all sides of an inline element, only left and right padding will have an effect on surrounding content. In the example below, 50px of padding has been applied to all sides of the element. As you can see, it has an affect on the content on each side, but not on content above or below</p>
+</blockquote>
+<p>翻译：<br>虽然内嵌元素的所有边距都可以应用，但只有左右边距对周围内容有影响。在下面的例子中，50px 的填充被应用到元素的所有边。可以看到，它对周围的内容有影响。在下面的例子中，50px 的填充被应用到元素的所有边。可以看到，它对每一边的内容都有影响，但对上面或下面的内容没有影响</p>
+<p>上图中我们设置 margin-top 和 padding-top 的值，但在设置中由于 padding-top 虽然生效但对周围的元素没有造成影响，所以如果颜色为透明就无法看出 padding 效果。</p>
+
+        </section>
+
+        
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              本文许可协议：
               
-                React Hooks自实现
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/React/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">React</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            9月 07, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/9.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/08/20/React-%E7%BB%84%E5%90%88vs%E7%BB%A7%E6%89%BF/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
               
-                React 组合vs继承
+            </span>
+            <br />
+            <span>本文永久链接：<a href="http://yoursite.com/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/">http://yoursite.com/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/</a></span>
+            
+              <br />
+              <span>本文Markdown：<a href="http://yoursite.com/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/行内元素margin、padding无效原因.md">http://yoursite.com/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/行内元素margin、padding无效原因.md</a></span>
+            
+          </section>
+        
+
+        
+          <section class="mdui-card-actions theme-post__card__actions">
+            
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            
+            <div class="theme-spacer"></div>
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/categories/css/">
+                    <span>css</span>
+                  </a>
+                
+              </div>
+            
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/tags/HTML5/">
+                    <span>HTML5</span>
+                  </a>
+                
+              </div>
+            
+          </section>
+        
+
+        
+          
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
+          
+        
+      </article>
+      
+    </div>
+  </div>
+
+  <div class="theme-spacer"></div>
+
+  
+
+  
+    <div class="theme-post__pagination mdui-color-theme">
+  
+    <div class="theme-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="theme-post__pagination__next mdui-ripple mdui-valign">
+      
+        <a href="/2020/10/26/axios-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" class="theme-post__pagination__next__content mdui-text-right">
+        
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          axios 源码解析
+        </div>
+      </a>
+    </div>
+    
+</div>
+
+  
+
+  
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title">打赏</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          
+            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
+              
+              
+              
+              wechat
             </a>
-          </div>
+          
+            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
+              
+              
+              
+              paypay
+            </a>
+          
         </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        有些组件无法提前知晓它们子组件的具体内容，所以我们建议这些组件使用一个特殊的 children prop 来将他们的子组件传递到渲染结果中：...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/React/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">React</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            8月 20, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-      
-        <div class="theme-end-footer">
-          <div class="mdui-text-center mdui-text-color-theme-text">
-            看起来已经没有了
-          </div>
-        </div>
-      
-  </div>
-  <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
-
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
+      </div>
+    </div>
+  
 </div>
 <script type="text/javascript">
-  themeRuntime.scriptsMap.archives = [];
-  (function() {
-    var fabTopFlag = false;
-    var fabEl = document.getElementById('index-fab');
-    function fabShowHide() {
-      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (bodyScrolled > 0 && !fabTopFlag) {
-        fabEl.classList.remove('mdui-fab-hide');
-        fabTopFlag = true;
-      } else if (bodyScrolled === 0 && fabTopFlag) {
-        fabEl.classList.add('mdui-fab-hide');
-        fabTopFlag = false;
+  themeRuntime.scriptsMap.post = [];
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
+    tocHighlight()
+    function tocHighlight() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
       }
-    }
-    fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-
-  (function() {
-    var pageTotal = 1
-    var pageNext = 2
-    themeRuntime.temp = {
-      index: 1
-    }
-    function morePosts() {
-      var screenHeight = window.innerHeight;
-      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
-      var loadStatus = pageNext - themeRuntime.temp.index
-      if (screenHeight >= compareHeight && loadStatus === 1) {
-        if (pageNext <= pageTotal) {
-          loadProgress(false)
-          var url = window.location.href + "page/" + pageNext
-          themeRuntime.temp.index = pageNext;
-          //console.log(pageTotal, url)
-          fetch(url, {
-              method:'GET',
-              mode:'cors',
-              credentials: 'include'
-          })
-          .then(function(response) {
-            return response.text()
-          }).then(function(HTML) {
-            var fakeDom = document.createElement('html');
-            fakeDom.innerHTML = HTML
-            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
-            var postsArea = document.querySelector(".theme-posts")
-            loadProgress(true)
-            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
-            pageNext++;
-          }).catch(function(error) {
-            mdui.alert(error, "错误！");
-          })
-        }
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
       }
+      var listens = [];
+      var cardToc = document.querySelector('.theme-post__toc');
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
     }
-    window.addEventListener('scroll', morePosts);
-    var listener = {
-      function: morePosts,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-</script>
-<script>
-  var content_flag = false;
-  const appbar = document.querySelector('.theme-appbar')
-  const body = document.querySelector('body')
-  const title = document.querySelector('.theme-toolbar-bottom__title')
-  window.addEventListener('scroll', styleScrolled)
-  var listener = {
-    function: styleScrolled,
-    event: 'scroll',
-    el: window,
-    removed: false
-  }
-  themeRuntime.scriptsMap.archives.push(listener)
-
-  function styleScrolled() {
-    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var divTop = document.querySelector('div#contentLocation').offsetTop
-    var contentLocation = divTop - scrollTop - 128;
-    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      body.classList.remove('theme-archive--style-change');
-      content_flag = true;
-    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      body.classList.add('theme-archive--style-change');
-      content_flag = false;
-    };
   }
 </script>
+
+<script type="text/javascript">
+  (function() {
+    var postLastModifiedDate = 1604048295695
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('.theme-post__card__warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+  var images = document.querySelectorAll('.theme-post__card__content img')
+  for (i = 0; i < images.length; i++) {
+    //console.log('image added', i)
+    images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>Ayden li</span><div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+
 
 
       </div>
