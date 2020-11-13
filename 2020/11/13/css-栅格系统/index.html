@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>React Hooks自实现 - 豪不无趣</title>
+  <title>css 栅格系统 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui,React">
+  <meta name="keywords" content="blog, hexo, mdui,HTML5">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,12 +63,12 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="React Hooks自实现 - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="css 栅格系统 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
   
-    <meta property="og:article:tag" content="React">
+    <meta property="og:article:tag" content="HTML5">
   
 
   
@@ -572,17 +572,13 @@
   <div class="theme-post__background mdui-color-theme"></div>
   <div class="theme-post__header mdui-color-theme">
     <div class="theme-post__header__title mdui-text-truncate">
-      React Hooks自实现
+      css 栅格系统
     </div>
     <div class="theme-spacer"></div>
     <div class="theme-post__header__actions mdui-valign">
       <div>
         <span>编写时间：</span>
-        <span style="float: right">9月 07, 2020</span>
-        
-        <br>
-          <span>最后修改时间：</span>
-          <span>11月 02, 2020</span>
+        <span style="float: right">11月 13, 2020</span>
         
       </div>
       
@@ -594,7 +590,7 @@
       <li class="mdui-list-item" style="cursor: auto">
         文章二维码
       </li>
-        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC5klEQVR42u3aSXLDMAwEQP//08k1F7lmQLlika1TqqIFzQuM5fVz5PXCxsbGxsbGxsbG/kr2K77+3l987O2zyduunspjxsbGxj6B3X74KojkPUmI7fFFh4WNjY19ALtNWlf3XL0hSY1JkpvFjI2NjY39/p6VVJcfEzY2Njb2XexZ0O8T4SylYWNjY2OvNHTa0iIKbnT0H++lYWNjY389ezbo/d+//22+jY2Njf1l7PZaWbJJjns2Qo4ix8bGxt6UnQ9x22Ftfk9OLdLVrALDxsbGfix71r5JjixvVK0MFaIjw8bGxt6UPWvNz1r/s4TUjpbrCgwbGxv74ez8p3x7f9s2mq3sJOUNNjY29t7sWdDtMPiu1n97iNjY2NjnsNdHvG1LKH+2HSfUTSVsbGzsh7PbZNA262dfyf/7kQoMGxsb+7Hstn0zAxej2aTpn4+lsbGxsbdmz1ZnVtpM74+1bXVF0WJjY2Nvyh7+rI/b+jkyf3a2KoSNjY19Djv/iZ+XJbNRcXv0RSmCjY2NvRH7LlIbUJJ48oHxcDyAjY2NvQV71tCfpcDZm9uR8DBvY2NjYz+W3ZYBOSBp3LdP5eVHNBXBxsbG3oLdjgryFNI28du0lESFjY2NfQI7H9nmIbarNve+ExsbG/s0djsSmB3BjNS+v16+xMbGxt6CnZPyhZvkQGdjidlqETY2Nvbe7Da4vICZJcLZyPnmUgQbGxv7seyV0JOBcbvKmQ+hh8uX2NjY2Fuw1xdl8mIgD7EdOUfDBmxsbOxN2bMRb7twk6e3nHFbUwkbGxv74ezZ5/Mh7qxQydNkcUDY2NjYW7Pz1lKe0vKioh0zJ4XN0soONjY29mPZySvatcg8WeaJqn0WGxsbG7td2VlJV3cdFjY2NjZ2m6jyVZ5ZS6sdJxdNJWxsbOyN2HlTKU9geVGRp6I8sWFjY2Ofw54ljySsfOEmP752VICNjY29N/ucCxsbGxsbGxsbG/trrl/ce3vui+9KUgAAAABJRU5ErkJggg==" style="cursor: auto">
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4ElEQVR42u3aS1LEMAwFwLn/pWFLFSTzJAVI7PZqCoLj9iyEPq+PLdcLGxsbGxsbGxsb+5bsV7yS578+8/3zD0c5/e3RM9UzY2NjY+/AvurFR3+VXOLkPNGZsbGxsTdgJwEp+dvkao4uK2H0zoyNjY2NnYecv7kybGxsbOzfYCdJy9EVFMpD2NjY2NiDAk0ers6vYLLbP9TSsLGxsW/PrjZ67/D5H/rb2NjY2LdkV1c1YeiVhHothDcnx8bGxl6UXS3f5+lEM8wMdr4gA8PGxsZ+IDsp7uRFqKQBUA2TeVry5gzY2NjYi7LzEcleieecXS1jJbsVUhFsbGzs5djV5KRHOn9vdec8TGJjY2Ovys7bANHW8XhlPnyT7BNdCjY2NvbS7GoYmwzZVJvHVzWDsbGxsXdg543eaiO2V9bv7XZZVwQbGxv7Iex5UlE9Sp6K5IWnZnsAGxsbezl2EkImxaAk2FSTluTLwMbGxt6BPR+vmYSrqwZ93rwFGxsbe1H2ZDimmk5MrrIaJrGxsbF3Y+dN0zzA5LzehZZHebCxsbGXZvcGZXopTXXUZl6KwsbGxl6bXRheTIJEqzw0SUuSn2BjY2Ovzc6RCfg8mPVK/PlIUDMDw8bGxn44u1rWSY5bfSZvA/cSJ2xsbOy12dE/8cWDJjsnl9sLh81GLzY2NvZj2dUtksTgI14Jr/plYGNjY+/GrjZrqwOaefCrvr0aSrGxsbH3ZE+uZtLo7e3zpiWMjY2NvSh7UuifjOzku1UbD4cBEhsbG3tRdnVNjvKX+xRSEWxsbOyHs1/x+o10ZdL6zXfGxsbG3oFdHbiZHKXXHp63e7GxsbF3YOfFmqRMX31LfkF5IQwbGxsbOw9gkyQhbzZUvxhsbGxs7Dm71xKYtwouTkWwsbGxH8KuFnSqZabJWE+S9pQbvdjY2NgLsXuN3qRknxebJvtEhS1sbGzsRdn7LGxsbGxsbGxsbOzbrE+FmjQ2tRX6MAAAAABJRU5ErkJggg==" style="cursor: auto">
     </ul>
   </div>
 
@@ -609,7 +605,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html" target="_blank" class="mdui-ripple">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/index.html" target="_blank" class="mdui-ripple">
                 分享到Facebook
             </a>
         </li>
@@ -617,7 +613,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html" target="_blank" class="mdui-ripple">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/index.html" target="_blank" class="mdui-ripple">
                 分享到Google+
             </a>
         </li>
@@ -625,7 +621,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html&title=React Hooks自实现" target="_blank" class="mdui-ripple">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/index.html&title=css 栅格系统" target="_blank" class="mdui-ripple">
                 分享到Linkedin
             </a>
         </li>
@@ -637,7 +633,7 @@
 
       
         <li class="mdui-menu-item">
-            <a href="https://twitter.com/intent/tweet?text=React Hooks自实现&url=http://yoursite.com//2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+            <a href="https://twitter.com/intent/tweet?text=css 栅格系统&url=http://yoursite.com//2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
                 分享到Twitter
             </a>
         </li>
@@ -669,10 +665,36 @@
           </section>
         
         <section class="mdui-typo theme-post__card__content">
-          <h2 id="了解-useReducer"><a href="#了解-useReducer" class="headerlink" title="了解 useReducer"></a>了解 useReducer</h2><p>useReducer 是 React16.8.0 中为数不多由官方提供的之一。它接受一个 ，以及一个初始的应用程序状态，然后返回当前应用程序的状态，和一个调度函数（dispatch）。<br>一个简单的例子：</p>
-<figure class="highlight javascript"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [state, dispatch] = useReducer(reducer, initialState);</span><br></pre></td></tr></table></div></figure>
+          <h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><p>CSS 栅格布局中最重要的两个元素是 wrapper（parent） 和 items（children）。wrapper 实际上就是栅格，而 items 就是栅格里面的元素。<br>以下面的代码为例：</p>
+<figure class="highlight html"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item1'</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item2'</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item3'</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item4'</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item5'</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'item6'</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.wrapper</span>&#123;</span></span><br><span class="line">        display: grid;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
 
-<h2 id="从-useState-开始"><a href="#从-useState-开始" class="headerlink" title="从 useState 开始"></a>从 useState 开始</h2>
+<p>让这个 div 标签成为栅格，我们只需将他的 display 属性设置为 grid：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>在我们还未做任何后续操作的时候它看起来是这样的：<br><img src="/images/grid/grid1.png" alt=""></p>
+<h2 id="Columns-and-rows"><a href="#Columns-and-rows" class="headerlink" title="Columns and rows"></a>Columns and rows</h2><p>我们需要为这个容器定义行和列，现在将这个容器分割成两行三列，需要用到 grid-template-row 和 grid-template-column 属性：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>当我们这样去定义 grid-template-columns 时，我们将得到三列，列长就是我们设置的大小，同理 grid-template-rows 也是一样。<br>于是我们得到下面的结果：<br><img src="/images/grid/grid2.png" alt=""><br>为了看清楚他们之间的关系，我们修改下代码再看看结果：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">50px</span> <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>会得到以下样式：<br><img src="/images/grid/grid3.png" alt=""></p>
+<h2 id="Item"><a href="#Item" class="headerlink" title="Item"></a>Item</h2><p>接下来需要了解的是，在栅格系统中的元素是如何放置的。</p>
+<p>我们创建一个 3*3 的栅格，HTML 仍然使用前面的：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>会出现：<br><img src="/images/grid/grid4.png" alt=""><br>你会发现我们的结果中展示的是 3<em>2 的栅格，而我们在 CSS 代码中定义的是 3</em>3 的栅格，那是因为我们的容器中只有六个元素，如果我们在 HTML 中定义了 9 个元素，那么结果就会是一个 3*3 的栅格</p>
+<p>为了重新定位并调整这些元素的大小，我们要对该元素使用 grid-column 和 grid-row 属性</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>上面的代码意图是，我们想让 item1 的起点在第一列并且终止在第四列，也就是说，我们想让它独占一行，下面是运行的结果：<br><img src="/images/grid/grid5.png" alt=""><br>前面代码中的 grid-column-end: 4; 可能会让人产生困惑，因为我们实际结果中只得到了三列，但是看看下面的图片就能明白了：<br><img src="/images/grid/grid6.png" alt=""><br>当第一个元素占满第一行时，其他的元素将向下顺延。<br>上面那段代码其实还有一种更简单的写法：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>接下来我们来做一些更复杂一点的操作：</p>
+<figure class="highlight css"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row-start</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-row-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item4</span> &#123;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="/images/grid/grid7.png" alt=""></p>
+
         </section>
 
         
@@ -684,10 +706,10 @@
               
             </span>
             <br />
-            <span>本文永久链接：<a href="http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/">http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/</a></span>
+            <span>本文永久链接：<a href="http://yoursite.com/2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/">http://yoursite.com/2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/</a></span>
             
               <br />
-              <span>本文Markdown：<a href="http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/React-Hooks自实现.md">http://yoursite.com/2020/09/07/React-Hooks%E8%87%AA%E5%AE%9E%E7%8E%B0/React-Hooks自实现.md</a></span>
+              <span>本文Markdown：<a href="http://yoursite.com/2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/css-栅格系统.md">http://yoursite.com/2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/css-栅格系统.md</a></span>
             
           </section>
         
@@ -706,8 +728,8 @@
               </div>
               <div class="mdui-typo">
                 
-                  <a href="/categories/JavaScript/">
-                    <span>JavaScript</span>
+                  <a href="/categories/css/">
+                    <span>css</span>
                   </a>
                 
               </div>
@@ -718,8 +740,8 @@
               </div>
               <div class="mdui-typo">
                 
-                  <a href="/tags/React/">
-                    <span>React</span>
+                  <a href="/tags/HTML5/">
+                    <span>HTML5</span>
                   </a>
                 
               </div>
@@ -739,7 +761,7 @@
       </article>
       
         <div class="mdui-color-theme theme-post__toc">
-          <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E86;&#x89E3;-useReducer" data-href="#&#x4E86;&#x89E3;-useReducer"><span class="toc-number"></span> <span class="toc-text">1. &#x4E86;&#x89E3; useReducer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4ECE;-useState-&#x5F00;&#x59CB;" data-href="#&#x4ECE;-useState-&#x5F00;&#x59CB;"><span class="toc-number"></span> <span class="toc-text">2. &#x4ECE; useState &#x5F00;&#x59CB;</span></a></li></ol></body></html>
+          <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Grid" data-href="#Grid"><span class="toc-number"></span> <span class="toc-text">1. Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Columns-and-rows" data-href="#Columns-and-rows"><span class="toc-number"></span> <span class="toc-text">2. Columns and rows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Item" data-href="#Item"><span class="toc-number"></span> <span class="toc-text">3. Item</span></a></li></ol></body></html>
         </div>
       
     </div>
@@ -753,7 +775,7 @@
     <i class="mdui-icon material-icons">&#xe242;</i>
   </button>
   <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
-    <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E86;&#x89E3;-useReducer" data-href="#&#x4E86;&#x89E3;-useReducer"><span class="toc-number"></span> <span class="toc-text">1. &#x4E86;&#x89E3; useReducer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4ECE;-useState-&#x5F00;&#x59CB;" data-href="#&#x4ECE;-useState-&#x5F00;&#x59CB;"><span class="toc-number"></span> <span class="toc-text">2. &#x4ECE; useState &#x5F00;&#x59CB;</span></a></li></ol></body></html>
+    <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Grid" data-href="#Grid"><span class="toc-number"></span> <span class="toc-text">1. Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Columns-and-rows" data-href="#Columns-and-rows"><span class="toc-number"></span> <span class="toc-text">2. Columns and rows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#Item" data-href="#Item"><span class="toc-number"></span> <span class="toc-text">3. Item</span></a></li></ol></body></html>
   </ul>
 </div>
 
@@ -762,32 +784,20 @@
   
     <div class="theme-post__pagination mdui-color-theme">
   
-    <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
-      
-        <a href="/2020/09/21/JavaScript-%E6%8A%A5%E9%94%99%E7%B1%BB%E5%9E%8B/" class="theme-post__pagination__prev__content mdui-text-left">
-        
-        <div>
-          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
-          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
-        </div>
-        <div class="mdui-typo-title mdui-text-truncate">
-          JavaScript 报错类型
-        </div>
-      </a>
-    </div>
+    <div class="theme-spacer mdui-hidden-xs"></div>
   
 
   
     <div class="theme-post__pagination__next mdui-ripple mdui-valign">
       
-        <a href="/2020/09/07/TypeScript-%E6%B3%9B%E5%9E%8B/" class="theme-post__pagination__next__content mdui-text-right">
+        <a href="/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/" class="theme-post__pagination__next__content mdui-text-right">
         
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
         </div>
         <div class="mdui-typo-title mdui-text-truncate">
-          TypeScript 泛型
+          行内元素margin、padding无效原因
         </div>
       </a>
     </div>
@@ -899,7 +909,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1604283713057
+    var postLastModifiedDate = 1605258261784
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
