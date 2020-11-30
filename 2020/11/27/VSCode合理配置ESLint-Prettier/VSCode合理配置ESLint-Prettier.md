@@ -50,7 +50,16 @@ category: 代码格式化
 解决方案就是修改根目录下的 eslintrc.js 文件中的配置，文件中 extends（规则继承） 的默认配置是<label style="background-color: #fff5f5;color:#ff502c;">standard</label>，这是调用了https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style 中对 JavaScript 的标准样式，所以我们要添加与 prettierrc 的兼容性
 
 ```js
+
 extends: ["plugin:prettier/recommended"],
+...
+将以下规则注释
+ // "comma-dangle": ["error", {
+        //     "imports": "never",
+        //     "exports": "never",
+        //     "functions": "ignore"
+        // }],
+...
 ```
 
 这样就可以正常的使用我们的代码格式化了
