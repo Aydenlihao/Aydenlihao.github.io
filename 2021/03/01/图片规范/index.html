@@ -675,7 +675,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/21.png"/>
+            <img src="/images/random/10.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -757,7 +757,7 @@
 <h1 id="图片打包"><a href="#图片打包" class="headerlink" title="图片打包"></a>图片打包</h1><p>小程序：</p>
 <figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">imagemin: &#123;</span><br><span class="line">            filter: &#x2F;\.(jpg|png|jpeg)$&#x2F;,</span><br><span class="line">            config: &#123;</span><br><span class="line">                jpg: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;,</span><br><span class="line">                png: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></div></figure>
 
-<p>1.quality 设置压缩图片的品质，建议设置为 95-100。<br>2.minFileSize 设置多大以上的图片才压缩，单位是比特。</p>
+<p>1.quality 设置压缩图片的品质，建议设置为 95-100。<br>2.minFileSize 设置多大以上的图片才压缩，单位是比特,建议为 1024。</p>
 
         </section>
 
@@ -973,7 +973,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1614669082255
+    var postLastModifiedDate = 1614669836532
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
