@@ -675,7 +675,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/10.png"/>
+            <img src="/images/random/3.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -693,8 +693,8 @@
 <li>图像颜色丰富而且文件比较大的（40KB - 200KB）优先考虑 JPEG 格式</li>
 <li>条件允许的，优先考虑 WebP 代替 PNG 和 JPEG 格式</li>
 </ul>
-<h1 id="图片大小"><a href="#图片大小" class="headerlink" title="图片大小"></a>图片大小</h1><p>PC 平台单张的图片的大小不应大于 200KB。</p>
-<p>移动平台单张的图片的大小不应大于 100KB</p>
+<h1 id="图片大小"><a href="#图片大小" class="headerlink" title="图片大小"></a>图片大小</h1><p>PC 平台单张的图片的大小不应大于 100KB。</p>
+<p>移动平台单张的图片的大小不应大于 50KB</p>
 <h1 id="图片质量"><a href="#图片质量" class="headerlink" title="图片质量"></a>图片质量</h1><p>上线的图片都应该经过压缩处理，压缩后的图片不应该出现肉眼可感知的失真区域<br>60 质量的 JPEG 格式图片与质量大于 60 的相比，肉眼已看不出明显的区别，因此保存 JPEG 图的时候，质量一般控制在 60，若保真度要求高的图片可适量提高到 80，图片大小控制在 200KB 以内</p>
 <h1 id="图片引入"><a href="#图片引入" class="headerlink" title="图片引入"></a>图片引入</h1><p>测试内容图应该写上表明图片尺寸的占位图，可以用线上占位图生成服务</p>
 <figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;placeholder.qiniudn.com&#x2F;300x200</span><br></pre></td></tr></table></div></figure>
@@ -755,9 +755,13 @@
 <li>统计 icon 的使用，减少 antd icon 与 iconfont 的 icon 重复</li>
 </ol>
 <h1 id="图片打包"><a href="#图片打包" class="headerlink" title="图片打包"></a>图片打包</h1><p>小程序：</p>
-<figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">imagemin: &#123;</span><br><span class="line">            filter: &#x2F;\.(jpg|png|jpeg)$&#x2F;,</span><br><span class="line">            config: &#123;</span><br><span class="line">                jpg: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;,</span><br><span class="line">                png: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">imagemin: &#123;</span><br><span class="line">            filter: &#x2F;\.(jpg|png|jpeg)$&#x2F;,</span><br><span class="line">            config: &#123;</span><br><span class="line">                jpg: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;,</span><br><span class="line">                png: &#123;</span><br><span class="line">                    quality: 80</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            minFileSize:1024,</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></div></figure>
 
-<p>1.quality 设置压缩图片的品质，建议设置为 95-100。<br>2.minFileSize 设置多大以上的图片才压缩，单位是比特,建议为 1024。</p>
+<ol>
+<li>quality 设置压缩图片的品质，建议设置为 95-100。</li>
+<li>minFileSize 设置多大以上的图片才压缩，单位是比特,建议为 1024。</li>
+<li>test 设置那里的图片才压缩，这里的路径是打包后的路径，如果打包后图片存放的文件夹是 images</li>
+</ol>
 
         </section>
 
@@ -973,7 +977,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1614669836532
+    var postLastModifiedDate = 1614672309300
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
