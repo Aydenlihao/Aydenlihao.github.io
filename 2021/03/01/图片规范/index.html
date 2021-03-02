@@ -675,7 +675,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/3.png"/>
+            <img src="/images/random/29.png"/>
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -702,7 +702,7 @@
 <p>HTML 中图片引入不需添加 width、height 属性，alt 属性应该写上</p>
 <figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; &gt;</span><br></pre></td></tr></table></div></figure>
 
-<p>图片缺省：<br>机械<br><img src="/images/default.png" alt=""><br>其他<br><img src="/images/broken.png" alt=""><br>背景图缺省：对应缺省图</p>
+<p>[强制]图片缺省：<br>[强制]机械<br><img src="/images/default.png" alt=""><br>[强制]其他<br><img src="/images/broken.png" alt=""><br>[强制]背景图缺省：对应缺省图</p>
 <p>CSS 中图片引入不需要引号</p>
 <figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.jdc &#123;</span><br><span class="line">    background-image: url(icon.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
@@ -732,13 +732,15 @@
 <li>要兼容 IE6/IE7 的不使用</li>
 </ul>
 <h1 id="图片地址"><a href="#图片地址" class="headerlink" title="图片地址"></a>图片地址</h1><h1 id="本地图片地址存储规范"><a href="#本地图片地址存储规范" class="headerlink" title="本地图片地址存储规范"></a>本地图片地址存储规范</h1><p>统一以绝对路径 import 图片引入路径</p>
+<figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import noLargeScreen from &#39;@&#x2F;assets&#x2F;no_large_screen.png&#39;;</span><br></pre></td></tr></table></div></figure>
+
 <h1 id="oss-图片上传规"><a href="#oss-图片上传规" class="headerlink" title="oss 图片上传规"></a>oss 图片上传规</h1><p>小程序主包中尽量使用网络图片，经统计 93%的图片内存占用在 3KB 以下（主包及子包），所以图片上传资源的标准个人建议以 2KB 为标准<br>oss 图片引用地址：<a href="https://d.zhgcloud.com" target="_blank" rel="noopener">https://d.zhgcloud.com</a><br>根据图片存储路径进行 URL 的拼接<br><img src="/images/oss_path.png" alt=""></p>
 <p>例如：</p>
 <figure class="highlight plain"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;d.zhgcloud.com&#x2F;weapp&#x2F;project&#x2F;evaluation.png</span><br></pre></td></tr></table></div></figure>
 
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h1 id="图片使用规范"><a href="#图片使用规范" class="headerlink" title="图片使用规范"></a>图片使用规范</h1><ol>
 <li>所有图片必须经过一定的压缩和优化才能发布</li>
-<li>命名全部用小写英文字母,数字, _ 的组合，其中不得包含汉字,空格,特殊字符。（模块_页面_功能@1/2/3.图片格式），默认使用 2 倍图时不添加倍数规范。</li>
+<li>[强制]命名全部用小写英文字母,数字, _ 的组合，其中不得包含汉字,空格,特殊字符。（模块_页面_功能@1/2/3.图片格式），默认使用 2 倍图时不添加倍数规范。</li>
 <li>尽量用易懂的词汇, 便于团队其他成员理解; 另, 命名分头尾两部分, 用下划线隔开</li>
 <li>尽量避免使用半透明的 png 图片</li>
 </ol>
@@ -977,7 +979,7 @@
 
 <script type="text/javascript">
   (function() {
-    var postLastModifiedDate = 1614672309300
+    var postLastModifiedDate = 1614673501047
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
