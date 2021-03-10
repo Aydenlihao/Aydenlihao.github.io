@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>标签: HTML5 - 豪不无趣</title>
+  <title>尾调用和尾递归 - 豪不无趣</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -48,7 +48,7 @@
 
   <meta name="author" content="Ayden li">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+  <meta name="keywords" content="blog, hexo, mdui,算法">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="豪不无趣">
@@ -63,10 +63,12 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="标签: HTML5 - 豪不无趣 | 豪不无趣">
+  <meta property="og:title" content="尾调用和尾递归 - 豪不无趣 | 豪不无趣">
   <meta property="og:image" content="/images/favicon.png" />
   
 
+  
+    <meta property="og:article:tag" content="算法">
   
 
   
@@ -364,7 +366,7 @@
         </div>
       
       
-        <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item ">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content">标签</div>
@@ -567,660 +569,380 @@
 
 
     <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="archives">
-        <div class="theme-archive">
+      <div class="barba-container"  data-namespace="post">
+        
+
+
+
   
-<div id="side-content" class="mdui-color-purple theme-archive__side-content">
-  <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
-    <div class="theme-archive__side-content__bg">
-      <img src="/images/random/43.png" />
-    </div>
-  </div>
-  <div class="theme-archive__side-content__content">
-    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/icon.jpeg"/>
-    <div class="theme-archive__side-content__author mdui-text-center">
-      Ayden li
-    </div>
-    <div class="theme-archive__side-content__name">
-      HTML5
-    </div>
-    <div class="theme-archive__side-content__length">
-      
-      8篇文章
-    </div>
-  </div>
-</div>
-<div id="contentLocation"></div>
+<link rel="stylesheet" href="/css/prism/darcula.min.css">
 
-  <div class="theme-posts">
+
+
+  
+<link rel="stylesheet" href="/css/prism/line-number.min.css">
+
+
+
+<div class="theme-post">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header mdui-color-theme">
+    <div class="theme-post__header__title mdui-text-truncate">
+      尾调用和尾递归
+    </div>
+    <div class="theme-spacer"></div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span>编写时间：</span>
+        <span style="float: right">3月 10, 2021</span>
+        
+      </div>
+      
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        文章二维码
+      </li>
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADk0lEQVR42u3aQXLjMAwEwPz/07vXHGJlBhBtpap1SsU2JbYPMIb4+uf6dn0hwIEDBw4cOHDgwIHjwRxf8fXq/d//n6/ZPsPLzZT3/eHuOHDgwIHjAMcvpejFBpJXN6u1dxnuBQcOHDhwHONIimhys+tSev3OZOWcL9kLDhw4cOD4LEe+gfazedP4ah0cOHDgwPF3Oa4faFZuN9EkDhw4cOB4JkdbLDebT7aRrPbhrBQHDhw4cNw00PDkvz8w34EDBw4cOBbXJrabHTtdf6oNK39YHwcOHDhw3MqxOcL5pTUqy3byPDeU1VlHiwMHDhw4Yo5kvGBWYpMQcF/C25KMAwcOHDhOc8xGB2atXV6M8zZv00biwIEDB44THG0hbAfacvR9+NjeCwcOHDhwnODIx9dmgWAbFOafnR074cCBAweO93MkLVNLsB+VaAPH6+fEgQMHDhznOPKNtcc5eTlPXq03mQeUOHDgwIHjVo62EM5K3V1NXRH55W0nDhw4cOC4lSNfon2I/YjD7CCqbkFx4MCBA8cBjlWhih89Kdubo6/2bxw4cODA8R6OvKC2zVteevdDckULigMHDhw4DnC0cWE+BrE5FmobtnaEAgcOHDhwnOCYPVYRva2jvQQ6b9hw4MCBA8dpjjywa4+O8hauLeRtga/DQRw4cODAseZIxtqiI5wDn01+BLTNJw4cOHDgOM3RbmY2dpCPwbUFO281ceDAgQPHaY5Zu7UfWcjDxHzwol0BBw4cOHCc4NgU2tkAQV5i8+OufH0cOHDgwHGaIy+rs5LZFs68wLfhIA4cOHDgeA9H3upES1+izO4y+9pWLRwOHDhw4DjMkZTezf/z+G/G+suRGA4cOHDguJVjE/nlrV0yZDA7OspHKIqOFgcOHDhwLDjyh8tjuKLIrY+1ZqUaBw4cOHC8h2PWtuWxYP6pVdjX8uHAgQMHjls58harjeHyAYjZe5JrGA7iwIEDB44FR3vlwVyCHrVYi3Aw+omAAwcOHDhu5WiL1l1RXRJK5uW2bUFx4MCBA8dpjtmhUVvSZttrw0EcOHDgwPEcjrtCunsPlmY/C5IvBgcOHDhwPIFjFtLlJfP6a0ju27aROHDgwIHjCRz1LYOmbt8KtmElDhw4cOA4zTE7TEqaq3bQIdl2Hv8dz0px4MCBA8dNAw1ts9cGhbNinMeUOHDgwIHjBIcLBw4cOHDgwIEDBw4cD7v+AzYrhl/wadMZAAAAAElFTkSuQmCC" style="cursor: auto">
+    </ul>
+  </div>
+
+
+      
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/index.html" target="_blank" class="mdui-ripple">
+                分享到Facebook
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/index.html" target="_blank" class="mdui-ripple">
+                分享到Google+
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/index.html&title=尾调用和尾递归" target="_blank" class="mdui-ripple">
+                分享到Linkedin
+            </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=尾调用和尾递归&url=http://yoursite.com//2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/index.html&via=Ayden li" target="_blank" class="mdui-ripple">
+                分享到Twitter
+            </a>
+        </li>
+      
+
+      
+
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+  <div class="theme-post__warpper
     
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/3.png)">
+  ">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card mdui-hoverable">
+        <section class="theme-post__card__warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </section>
         
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2021/03/04/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E4%B9%8BHSTS/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+        
+          <section class="mdui-card-media">
+            <img src="/images/random/3.png"/>
+          </section>
+        
+        <section class="mdui-typo theme-post__card__content">
+          <p>讲尾调用和尾递归优化之前，需要知道了函数执行栈。</p>
+<h2 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h2><p><label style="background-color: #fff5f5;color:#ff502c;">执行栈</label>，也叫<label style="background-color: #fff5f5;color:#ff502c;">调用站</label>，具有栈存储的特性<label style="background-color: #fff5f5;color:#ff502c;">LIFO</label>（Last in,First out 后进先出）结构，用于存储在代码执行过程中创建的所有执行上下文。<br>在代码执行过程中每发生函数调用时，引擎都会为函数创建一个新的执行上下文并 PUSH 到当前执行栈的栈顶。<br>当函数运行完成后，将对应的执行上下文从执行栈中 POP 出，上下文的控制权将转到当前执行栈的下一个执行上下文。</p>
+<h2 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h2><p><label style="background-color: #fff5f5;color:#ff502c;">尾调用</label>:是指执行某个函数时，最后异步是一个函数调用，并且被调用函数的返回值直接被当前函数返回。</p>
+<figure class="highlight js"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> g();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<h2 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h2><p><label style="background-color: #fff5f5;color:#ff502c;">递归</label>:函数调用自身。<br><label style="background-color: #fff5f5;color:#ff502c;">尾递归</label>:在尾部直接调用自身的递归函数。<br>尾递归，比线性递归多一个参数，这个参数是上一次调用函数得到的结果；<br>所以，关键点在于，<label style="background-color: #fff5f5;color:#ff502c;">尾递归每次调用都在收集结果</label>，避免了线性递归不收集结果只能依次展开消耗内存的坏处比线性递归多一个参数，这个参数是上一次调用函数得到的结果；<br>递归非常耗费内存，因为需要同时保存成千上百个调用记录，很容易发生”栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用记录，所以永远不会发生”栈溢出”错误。</p>
+<figure class="highlight js"><div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable "><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//普通递归</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n + sum(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//尾递归</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sumFun</span>(<span class="params">a, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">return</span> sumFun(a + n, n - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sumFun(<span class="number">0</span>, n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>普通的递归，算到最后一步的时候，计算机内存里存储的值是 5 ＋ 4 ＋ 3 ＋ 2 ＋ sum(1)，这里是 4 个数字，和一个需要计算的函数 sum()，然后再把这 5 个数字加起来，得出结果 15。<br>尾递归，算到最后一步的时候，计算机内存里存储的值是 14+sum(1)，这里是 1 个数字，和一个需要计算的函数 sum()。</p>
+
+        </section>
+
+        
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              本文许可协议：
               
-                网路安全之HSTS
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        很多人知道 301、302 状态码，但是几乎没有了解过 303、307 的状态码，有幸今天在淘宝首页看见了 307 状态，所以便想了解其使用。
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/%E6%B8%B8%E8%A7%88%E5%99%A8%E5%8D%8F%E8%AE%AE/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">游览器协议</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            3月 04, 2021
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/1.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2021/03/03/css-webkit-box-reflect-%E5%80%92%E5%BD%B1%E7%89%B9%E6%95%88/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
               
-                css -webkit-box-reflect 倒影特效
-            </a>
-          </div>
+            </span>
+            <br />
+            <span>本文永久链接：<a href="http://yoursite.com/2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/">http://yoursite.com/2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/</a></span>
+            
+              <br />
+              <span>本文Markdown：<a href="http://yoursite.com/2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/尾调用和尾递归.md">http://yoursite.com/2021/03/10/%E5%B0%BE%E8%B0%83%E7%94%A8%E5%92%8C%E5%B0%BE%E9%80%92%E5%BD%92/尾调用和尾递归.md</a></span>
+            
+          </section>
+        
+
+        
+          <section class="mdui-card-actions theme-post__card__actions">
+            
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            
+            <div class="theme-spacer"></div>
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/categories/JavaScript/">
+                    <span>JavaScript</span>
+                  </a>
+                
+              </div>
+            
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/tags/%E7%AE%97%E6%B3%95/">
+                    <span>算法</span>
+                  </a>
+                
+              </div>
+            
+          </section>
+        
+
+        
+          
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
+          
+        
+      </article>
+      
+        <div class="mdui-color-theme theme-post__toc">
+          <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x6267;&#x884C;&#x6808;" data-href="#&#x6267;&#x884C;&#x6808;"><span class="toc-number"></span> <span class="toc-text">1. &#x6267;&#x884C;&#x6808;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C3E;&#x8C03;&#x7528;" data-href="#&#x5C3E;&#x8C03;&#x7528;"><span class="toc-number"></span> <span class="toc-text">2. &#x5C3E;&#x8C03;&#x7528;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C3E;&#x9012;&#x5F52;" data-href="#&#x5C3E;&#x9012;&#x5F52;"><span class="toc-number"></span> <span class="toc-text">3. &#x5C3E;&#x9012;&#x5F52;</span></a></li></ol></body></html>
         </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        webkit-box-reflect...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/css/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">css</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            3月 03, 2021
-          </div>
-        </div>
-      </section>
-    </article>
+      
+    </div>
   </div>
 
+  <div class="theme-spacer"></div>
 
+  
+    <div class="mdui-color-theme theme-post__toc-fab">
+  <button class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" mdui-menu="{target: '#toc-fab-menu', fixed: true}" id="toc-fab">
+    <i class="mdui-icon material-icons">&#xe242;</i>
+  </button>
+  <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
+    <html><head></head><body><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x6267;&#x884C;&#x6808;" data-href="#&#x6267;&#x884C;&#x6808;"><span class="toc-number"></span> <span class="toc-text">1. &#x6267;&#x884C;&#x6808;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C3E;&#x8C03;&#x7528;" data-href="#&#x5C3E;&#x8C03;&#x7528;"><span class="toc-number"></span> <span class="toc-text">2. &#x5C3E;&#x8C03;&#x7528;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5C3E;&#x9012;&#x5F52;" data-href="#&#x5C3E;&#x9012;&#x5F52;"><span class="toc-number"></span> <span class="toc-text">3. &#x5C3E;&#x9012;&#x5F52;</span></a></li></ol></body></html>
+  </ul>
+</div>
+
+  
+
+  
+    <div class="theme-post__pagination mdui-color-theme">
+  
+    <div class="theme-spacer mdui-hidden-xs"></div>
+  
+
+  
+    <div class="theme-post__pagination__next mdui-ripple mdui-valign">
       
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/3.png)">
+        <a href="/2021/03/04/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E4%B9%8BHSTS/" class="theme-post__pagination__next__content mdui-text-right">
         
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/11/13/css-%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+        <div>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">旧的文章</span>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          网路安全之HSTS
+        </div>
+      </a>
+    </div>
+    
+</div>
+
+  
+
+  
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title">打赏</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          
+            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
               
-                css 栅格系统
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        Grid
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/css/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">css</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            11月 13, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/29.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/10/30/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0margin%E3%80%81padding%E6%97%A0%E6%95%88%E5%8E%9F%E5%9B%A0/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
               
-                行内元素margin、padding无效原因
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        行内元素：可以一行存在多个标签，对宽高属性值不生效，完全靠内容撑开宽高！经过验证后，发现 top/bottom(padding-top/pa...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/css/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">css</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            10月 30, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/33.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/06/19/Sharedb/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
               
-                Sharedb
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        Sh...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            6月 19, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/21.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/05/25/%E5%86%85%E8%81%94%E7%BC%93%E5%AD%98/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
               
-                内联缓存
+              wechat
             </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        内联缓存
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
           
-            
-              <a href="/categories/V8%E5%BC%95%E6%93%8E/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">V8引擎</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            5月 25, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/19.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/05/11/%E4%BD%A0%E5%8F%AF%E8%83%BD%E8%BF%98%E4%B8%8D%E7%9F%A5%E7%9A%84-CSS-%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
               
-                你可能还不知的 CSS 好用的属性
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        在这篇文章中，向你介绍了几个比较少见且好用的 CSS 属性，希望对你有所帮助
-
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/css/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">css</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            5月 11, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-          
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/17.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2020/05/06/%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E7%9A%84localStorage%E5%92%8CsessionStorage/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
+                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
               
-                本地存储的localStorage和sessionStorage
+              
+              
+              paypay
             </a>
-          </div>
+          
         </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-          
-            
-              <a href="/categories/JavaScript/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__categories">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
-                  </span>
-                  <span class="mdui-chip-title">JavaScript</span>
-                </div>
-              </a>
-            
-          
-        
-        
-          
-            
-              <a href="/tags/HTML5/" class="theme-link--no-style">
-                <div class="mdui-chip theme-posts__post__footer__tags">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
-                  </span>
-                  <span class="mdui-chip-title">HTML5</span>
-                </div>
-              </a>
-            
-          
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            5月 06, 2020
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-      
-      
-        <div class="theme-end-footer">
-          <div class="mdui-text-center mdui-text-color-theme-text">
-            看起来已经没有了
-          </div>
-        </div>
-      
-  </div>
-  <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
-
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
+      </div>
+    </div>
+  
 </div>
 <script type="text/javascript">
-  themeRuntime.scriptsMap.archives = [];
-  (function() {
-    var fabTopFlag = false;
-    var fabEl = document.getElementById('index-fab');
-    function fabShowHide() {
-      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (bodyScrolled > 0 && !fabTopFlag) {
-        fabEl.classList.remove('mdui-fab-hide');
-        fabTopFlag = true;
-      } else if (bodyScrolled === 0 && fabTopFlag) {
-        fabEl.classList.add('mdui-fab-hide');
-        fabTopFlag = false;
+  themeRuntime.scriptsMap.post = [];
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
+    tocHighlight()
+    function tocHighlight() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
       }
-    }
-    fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-
-  (function() {
-    var pageTotal = 1
-    var pageNext = 2
-    themeRuntime.temp = {
-      index: 1
-    }
-    function morePosts() {
-      var screenHeight = window.innerHeight;
-      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
-      var loadStatus = pageNext - themeRuntime.temp.index
-      if (screenHeight >= compareHeight && loadStatus === 1) {
-        if (pageNext <= pageTotal) {
-          loadProgress(false)
-          var url = window.location.href + "page/" + pageNext
-          themeRuntime.temp.index = pageNext;
-          //console.log(pageTotal, url)
-          fetch(url, {
-              method:'GET',
-              mode:'cors',
-              credentials: 'include'
-          })
-          .then(function(response) {
-            return response.text()
-          }).then(function(HTML) {
-            var fakeDom = document.createElement('html');
-            fakeDom.innerHTML = HTML
-            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
-            var postsArea = document.querySelector(".theme-posts")
-            loadProgress(true)
-            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
-            pageNext++;
-          }).catch(function(error) {
-            mdui.alert(error, "错误！");
-          })
-        }
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
       }
+      var listens = [];
+      var cardToc = document.querySelector('.theme-post__toc');
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
     }
-    window.addEventListener('scroll', morePosts);
-    var listener = {
-      function: morePosts,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-</script>
-<script>
-  var content_flag = false;
-  const appbar = document.querySelector('.theme-appbar')
-  const body = document.querySelector('body')
-  const title = document.querySelector('.theme-toolbar-bottom__title')
-  window.addEventListener('scroll', styleScrolled)
-  var listener = {
-    function: styleScrolled,
-    event: 'scroll',
-    el: window,
-    removed: false
-  }
-  themeRuntime.scriptsMap.archives.push(listener)
-
-  function styleScrolled() {
-    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var divTop = document.querySelector('div#contentLocation').offsetTop
-    var contentLocation = divTop - scrollTop - 128;
-    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      body.classList.remove('theme-archive--style-change');
-      content_flag = true;
-    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      body.classList.add('theme-archive--style-change');
-      content_flag = false;
-    };
   }
 </script>
+
+<script type="text/javascript">
+  (function() {
+    var postLastModifiedDate = 1615361404047
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('.theme-post__card__warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+  var images = document.querySelectorAll('.theme-post__card__content img')
+  for (i = 0; i < images.length; i++) {
+    //console.log('image added', i)
+    images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>Ayden li</span><div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+
 
 
       </div>

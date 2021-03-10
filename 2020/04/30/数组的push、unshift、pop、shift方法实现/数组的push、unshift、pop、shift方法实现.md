@@ -2,7 +2,7 @@
 title: 数组的push、unshift、pop、shift方法实现
 date: 2020-04-30 11:06:15
 tags:
-  - 排序算法
+  - 算法
 category: JavaScript
 ---
 
